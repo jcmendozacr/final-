@@ -25,7 +25,7 @@ Talavera Valley Hackathon 2026 · Track 04 WealthTech · *Alfa a la vista*. Dura
 | 5. Impacto, negocio y continuidad (15%) | Lámina 11: quién paga, cuánto, perfil del primer cliente (empresa de Puebla con equipo joven) y plan de 30/60/90 días | — |
 | 6. Pitch y demo (5%) | Estructura problema → solución → demo → evidencia → negocio, ~5 min | Ensayar con cronómetro |
 
-## Guion (texto para decir en voz alta, ~914 palabras ≈ 5 minutos)
+## Guion (texto para decir en voz alta, ~907 palabras ≈ 5 minutos)
 
 Es el mismo texto de las notas de cada lámina. Lo que va entre paréntesis es una acción, no se dice.
 
@@ -51,7 +51,7 @@ No son reglas fijas: es un modelo dinámico que se adapta cada mes. ¿Cuánto en
 (Abrir la demo.) Este es nuestro MVP: el backtest en vivo, convertido en el reporte que Ana recibe cada mes. Octubre de 2026: le ganó al índice por 0.7 puntos y en el año va 35 arriba; y aun así le decimos que está 27% abajo de su máximo de junio. Aquí ve qué tiene y por qué: sonó una alarma, así que las acciones bajaron a 30%. (Ir a octubre de 2008.) Y en 2008, el freno: el modelo de riesgo confirmó y su dinero se fue a bonos.
 
 ### 8 · Resultados y por qué desde 2007 (2:45–3:20)
-Lo probamos en el Backtest Engine de KaxaNuk, de 2007 a hoy, con 2008, el COVID, 2022 y los aranceles: 17.8% al año contra 10.5% del índice. Son 7.4 puntos de ventaja, y 6.2 con comisiones más caras de lo normal. La peor caída fue de 34%; la del índice, de 53%. ¿Por qué desde 2007? Una de nuestras alarmas usa un fondo de bonos que existe desde finales de 2003, y las señales necesitan un año de historia: 2007 es el primer año con todo encendido, e incluye 2008 completo. Y con 2000 a 2009 entrenamos el modelo de riesgo; no se califica a un alumno con el examen con el que estudió, por eso mostramos 2010 en adelante aparte: ahí la ventaja sigue en 4.8 puntos al año con costos altos.
+Lo probamos en el Backtest Engine de KaxaNuk, de 2007 a hoy, con 2008, el COVID, 2022 y los aranceles: 17.8% al año contra 10.5% del índice. Son 7.4 puntos de ventaja, y 6.2 con comisiones más caras de lo normal. La peor caída fue de 34%; la del índice, de 53%. ¿Por qué desde 2007? Es la fecha que fijamos al inicio, antes de probar nuestras 40 variantes, y no la movimos para que el resultado se viera mejor; además incluye 2008 completo. Y con 2000 a 2009 entrenamos el modelo de riesgo; no se califica a un alumno con el examen con el que estudió, por eso mostramos 2010 en adelante aparte: ahí la ventaja sigue en 4.8 puntos al año con costos altos.
 
 ### 9 · ¿Por qué nosotros? (3:20–3:25)
 Comparado con sus otras opciones, Ana gana más con menos caída, y sabe cada mes por qué.
@@ -99,7 +99,7 @@ Miguel tiene al gobierno. Ana puede tener una estrategia que trabaje por ella, c
 | Atribución: selección +1,670%, momentum +1,029%, tecnología +162%, mercado −310% | `modelo_principal_v3/ATRIBUCION.md` |
 | 4% real, ~22% en acciones, 2.0% de los planes de empresa, Ley 73, 15% del salario hacia 2030 | Documento del reto |
 | $1 → $5.4 (4%) y $37.3 (≈8.8%) en 43 años | Ilustrativo: 1.04^43 y 1.0878^43 (4% + 4.78 puntos) |
-| TIP cotiza desde el 2003-12-05; primera señal 2006-01-31; backtest desde 2007-03-01 | `MODELO_M2.md`, secciones 6 y 7 |
+| TIP cotiza desde el 2003-12-05; primera señal 2006-01-31 (parámetro `FIRST_SIGNAL`, no un límite de datos); backtest desde 2007-03-01, la ventana fijada al inicio del proyecto | `MODELO_M2.md`, secciones 6 y 7 |
 | Las 7 variantes con alfa positivo (+1.74% a +8.74%) | `modelo_principal_v3/MODELO_PRINCIPAL.md`, sección 4 |
 | 40 variantes y 158 corridas del Backtest Engine | Carpetas con `resumen.json` en el repo (`hackaton_*`, `paralelo_etf`, `resultados_*`, `modelo_principal_*`) |
 | Alfa de las 3 versiones: +3.00%, +4.28%, +7.37% | `MODELO_ACTUAL.md`, `modelo_principal_c2/` y `modelo_principal_v3/` |

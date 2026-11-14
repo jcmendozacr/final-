@@ -53,8 +53,8 @@ se fue a bonos.
 
 **[8 · Resultados]** En el Backtest Engine de KaxaNuk, de 2007 a hoy: 17.8% al año contra 10.5% del
 índice. Son 7.4 puntos de ventaja, y 6.2 con comisiones más caras de lo normal. La peor caída fue de
-34%; la del índice, de 53%. ¿Por qué desde 2007? Es el primer año con todas las señales listas, e
-incluye 2008 completo. Y como con 2000 a 2009 entrenamos el modelo de riesgo, mostramos 2010 en
+34%; la del índice, de 53%. ¿Por qué desde 2007? Es la fecha que fijamos
+al inicio, antes de probar nuestras 40 variantes, e incluye 2008 completo. Y como con 2000 a 2009 entrenamos el modelo de riesgo, mostramos 2010 en
 adelante aparte: ahí la ventaja sigue en 4.8 puntos al año.
 
 *Paso:* «Ganar más está bien, pero ¿con cuánto riesgo y quién paga? Les cuenta [Persona 3].»
