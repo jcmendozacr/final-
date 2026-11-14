@@ -1,0 +1,64 @@
+[INFO] License acceptance from cache (no re-check needed yet)
+[INFO] Executing data pipeline for backtester creation
+[INFO] Detected horizontal format for weights.csv
+[INFO] Skipping zero-weight tickers: ['BRCM', 'GEN', 'INCLF', 'JWN', 'MGM', 'MRK', 'MTLQQ', 'NYX1', 'PD1', 'SWY', 'TXU']
+[INFO] Loading market data from 2007-01-18 instead of 2007-03-01 to fill the 20-day execution-cost windows
+[INFO] Execution-cost metrics: average daily volume and volatility over 20 trading days, from column 'm_volume_split_adjusted'
+[INFO] Execution-cost metrics: half spread estimated with corwin_schultz over 20 trading days
+[INFO] rebalance_date_handling=next_trading_day: every rebalancing date is a trading day, nothing moved.
+[WARNING] ROH has a weight of 0.1 on 2009-04-22 but its last price is 2009-04-01; the weight is ignored and the ticker is not held from 2009-04-01 on (delisted_position_handling=sell_at_last_price). The other weights are not renormalized: the freed capital stays in cash.
+[WARNING] MEDI1 stops trading after 2007-06-18: its whole position will be sold on 2007-06-18 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] PCYC stops trading after 2015-05-22: its whole position will be sold on 2015-05-22 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] GMCR stops trading after 2016-03-02: its whole position will be sold on 2016-03-02 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[INFO] Total Time in data loading and validation for 262 tickers: 0h 0m 25.73s
+[INFO] Checking data integrity for 246 rebalancing dates
+[INFO] Data integrity check passed - every rebalancing date has prices for the positions it touches, and no position outlives its price series
+[INFO] Data pipeline completed successfully, constructing backtester
+[INFO] Using 260 active tickers
+[INFO] Starting PyArrow backtest execution for weights
+[INFO] Processing 4955 trading days (from 2007-03-01 00:00:00 to 2026-11-06 00:00:00), 246 rebalancing dates
+Forced liquidation of MEDI1 on 2007-06-18 (last price 2007-06-18): sold 20297.0 shares at 1.0032 for 20362.95, commission 2.04. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of PCYC on 2015-05-22 (last price 2015-05-22): sold 470.0 shares at 71.3066 for 33514.08, commission 3.35. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of GMCR on 2016-03-02 (last price 2016-03-02): sold 462.0 shares at 30.3545 for 14023.76, commission 1.40. The proceeds stay in cash until the next scheduled rebalance.
+[INFO] PyArrow backtest execution completed successfully
+[INFO] Total time in backtesting execution: 0h 0m 0.69s
+[INFO] Excel report successfully saved to: C:\Users\Zkilp\Downloads\Modelo-main\hackaton_combos\sens_LB63\backtest_2007_base\weights_20261114101838_backtest_results.xlsx
+{
+  "ventana_pedida": [
+    "2007-03-01",
+    "2026-11-06"
+  ],
+  "ventana_valuada": [
+    "2007-03-01",
+    "2026-11-06"
+  ],
+  "años_valuados": 20.38095238095238,
+  "portafolio": {
+    "Annualized Return (CAGR)": 0.1219129885926129,
+    "Annualized Volatility": 0.2507525417012624,
+    "Portfolio Sharpe Ratio": 0.48618844604915584,
+    "Portfolio Sortino Ratio": 0.6541855569928715,
+    "Max Drawdown": -0.3396413824303821,
+    "Alpha": 0.017400905937168476,
+    "Information Ratio": 0.14788535776903466,
+    "Total Commissions": 6491.67,
+    "Total Slippage Costs": 31418.95
+  },
+  "benchmarks": {
+    "KN_US_Equity_Core": {
+      "Annualized Return (CAGR)": 0.10451208265544443,
+      "Annualized Volatility": 0.20010631925981373,
+      "Portfolio Sharpe Ratio": 0.5222827696897877,
+      "Portfolio Sortino Ratio": 0.6855043160836345,
+      "Max Drawdown": -0.5266640980723433
+    },
+    "SPY": {
+      "Annualized Return (CAGR)": 0.10392176965491084,
+      "Annualized Volatility": 0.19987654113620526,
+      "Portfolio Sharpe Ratio": 0.5199297979851156,
+      "Portfolio Sortino Ratio": 0.7310238172568129,
+      "Max Drawdown": -0.5518463924119704
+    }
+  },
+  "tasa_libre_de_riesgo": 0.0
+}

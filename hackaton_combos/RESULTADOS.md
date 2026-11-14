@@ -50,3 +50,62 @@ mayor al de C1 (+3.33% contra +2.58%) y caída máxima de −33.8% (el límite e
 modelo vetó la salida del interruptor, porque su probabilidad era la del cierre de febrero (0.17,
 todavía tranquila), y la estrategia se quedó en sectores durante el desplome del COVID. Tiene menos
 Sharpe que C1 (0.64 contra 0.74).
+
+## Variante pre-registrada: 3 acciones al 20% (`variante_20pct.py`, `C2_20pct/`)
+
+**Cambio:** el componente de acciones lleva 3 acciones en vez de 10, a 20% cada una en el régimen
+alcista y a 10% en el mixto. Todo lo demás es igual a C2 confirmada.
+
+**Criterio, fijado antes de correr:**
+- alfa con estrés 2007–26 mayor a +3.33%;
+- alfa con estrés 2010–26 mayor a +1.06%;
+- caída máxima de −40% o menos;
+- ninguna acción arriba de 20%.
+
+| | C2 confirmada (principal) | Variante 20% |
+| --- | --- | --- |
+| CAGR 2007–26 (estrés) | 14.74% (13.78%) | 16.25% (15.22%) |
+| Alfa 2007–26 (estrés) | +4.28% (+3.33%) | **+5.80% (+4.77%)** ✅ |
+| Alfa 2010–26 (estrés) | +1.98% (+1.06%) | **+3.49% (+2.47%)** ✅ |
+| Volatilidad / Sharpe 2007–26 | 23.2% / **0.64** | 27.4% / 0.59 |
+| Caída máxima 2007–26 | −33.8% | **−40.4%** ❌ (estrés −41.3%) |
+| Acción máxima | 6% | 20% ✅ |
+
+**Veredicto: no pasa por la caída máxima** (−40.4% contra el límite de −40%). Se queda C2
+confirmada. La variante gana más alfa, pero con más riesgo: su Sharpe es menor (0.59 contra 0.64).
+
+Nota técnica: las corridas de 2010 se cortaban por "Cash error" (redondeo a acciones enteras con 20%
+en una acción). Se repitieron con los precios divididos entre 100 (`datos_backtest_combo_x01/motor`),
+lo que no cambia ningún rendimiento: la corrida de 2007–2026 da lo mismo con las dos escalas (16.23%
+contra 16.25%).
+
+## Versión agresiva: regla de selección de OKRUS con tope de 20% (`variante_okrus_20pct.py`, `C2_okrus_20pct/`)
+
+**Regla:** igual que C2 confirmada, pero las acciones se eligen con la regla "Agresiva" de OKRUS,
+aplicada sin sesgo.
+- Universo: las 300 más grandes del KN Core en cada fecha.
+- Elegibles: precio arriba de su EMA200, a no más de 15% del máximo de 63 días, y momentum de 126
+  días positivo.
+- Las 3 mejores, a 20% en alcista y a 10% en mixto.
+
+**Límite de caída del usuario para el perfil agresivo:** −55%. **Regla de elección (fijada antes):**
+la versión agresiva es la de mayor alfa con estrés en 2007–26 entre las dos variantes al 20%, siempre
+que su alfa con estrés en 2010–26 sea positivo.
+
+| | C2 confirmada | C2 20% (momentum 12-1) | **C2 20% regla OKRUS** |
+| --- | --- | --- | --- |
+| CAGR 2007–26 (estrés) | 14.74% (13.78%) | 16.25% (15.22%) | **17.82% (16.62%)** |
+| Alfa 2007–26 (estrés) | +4.28% (+3.33%) | +5.80% (+4.74%) | **+7.37% (+6.17%)** |
+| Alfa 2010–26 (estrés) | +1.98% (+1.06%) | +3.49% (+2.47%) | **+5.97% (+4.78%)** |
+| Sharpe 2007–26 | 0.64 | 0.59 | **0.68** |
+| Volatilidad | 23.2% | 27.4% | 26.3% |
+| Caída máxima | −33.8% | −40.4% | **−34.0%** (estrés −35.1%) |
+| Acción máxima | 6% | 20% | 20% |
+
+**Elegida como versión agresiva.** Además, en esta ventana supera al modelo principal en alfa y en
+Sharpe, con una caída casi igual. Las acciones más elegidas fueron NVDA, MU, TSLA, LVS, NFLX y WDC.
+El universo es el KN Core de cada fecha, no una lista elegida hoy.
+
+**Advertencia de método:** esta variante salió después de muchas pruebas sobre la misma ventana
+(2007–2026). Su resultado fuera de muestra del modelo de riesgo (2010–26) es sólido, pero la
+selección de la regla en sí no tuvo un periodo de prueba ciego.

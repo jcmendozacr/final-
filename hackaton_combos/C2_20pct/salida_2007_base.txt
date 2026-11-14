@@ -1,0 +1,67 @@
+[INFO] License acceptance from cache (no re-check needed yet)
+[INFO] Executing data pipeline for backtester creation
+[INFO] Detected horizontal format for weights.csv
+[INFO] Skipping zero-weight tickers: ['AMTD1', 'BRCM', 'BTUUQ', 'CELG', 'CME', 'DTV1', 'ESRX', 'GRMN', 'INCLF', 'Q1']
+[INFO] Loading market data from 2007-01-18 instead of 2007-03-01 to fill the 20-day execution-cost windows
+[INFO] Execution-cost metrics: average daily volume and volatility over 20 trading days, from column 'm_volume_split_adjusted'
+[INFO] Execution-cost metrics: half spread estimated with corwin_schultz over 20 trading days
+[INFO] rebalance_date_handling=next_trading_day: every rebalancing date is a trading day, nothing moved.
+[WARNING] PD1 stops trading after 2007-03-19: its whole position will be sold on 2007-03-19 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] UST1 stops trading after 2009-01-05: its whole position will be sold on 2009-01-05 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] VMED stops trading after 2013-06-07: its whole position will be sold on 2013-06-07 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] FRX1 stops trading after 2014-06-30: its whole position will be sold on 2014-06-30 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] PCYC stops trading after 2015-05-22: its whole position will be sold on 2015-05-22 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[INFO] Total Time in data loading and validation for 157 tickers: 0h 0m 17.71s
+[INFO] Checking data integrity for 246 rebalancing dates
+[INFO] Data integrity check passed - every rebalancing date has prices for the positions it touches, and no position outlives its price series
+[INFO] Data pipeline completed successfully, constructing backtester
+[INFO] Using 155 active tickers
+[INFO] Starting PyArrow backtest execution for weights
+[INFO] Processing 4955 trading days (from 2007-03-01 00:00:00 to 2026-11-06 00:00:00), 246 rebalancing dates
+Forced liquidation of PD1 on 2007-03-19 (last price 2007-03-19): sold 106.0 shares at 191.6454 for 20314.41, commission 2.03. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of UST1 on 2009-01-05 (last price 2009-01-05): sold 64.0 shares at 190.5273 for 12193.74, commission 1.22. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of VMED on 2013-06-07 (last price 2013-06-07): sold 122.0 shares at 207.8877 for 25362.30, commission 2.54. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of FRX1 on 2014-06-30 (last price 2014-06-30): sold 286.0 shares at 235.8786 for 67461.27, commission 6.75. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of PCYC on 2015-05-22 (last price 2015-05-22): sold 11.0 shares at 7130.6552 for 78437.21, commission 7.85. The proceeds stay in cash until the next scheduled rebalance.
+[INFO] PyArrow backtest execution completed successfully
+[INFO] Total time in backtesting execution: 0h 0m 0.51s
+[INFO] Excel report successfully saved to: C:\Users\Zkilp\Downloads\Modelo-main\hackaton_combos\C2_20pct\backtest_2007_base\weights_20261114095214_backtest_results.xlsx
+{
+  "ventana_pedida": [
+    "2007-03-01",
+    "2026-11-06"
+  ],
+  "ventana_valuada": [
+    "2007-03-01",
+    "2026-11-06"
+  ],
+  "años_valuados": 20.38095238095238,
+  "portafolio": {
+    "Annualized Return (CAGR)": 0.16252296998341453,
+    "Annualized Volatility": 0.27431148053203114,
+    "Portfolio Sharpe Ratio": 0.5924760045339658,
+    "Portfolio Sortino Ratio": 0.7834232900054943,
+    "Max Drawdown": -0.4039341927082731,
+    "Alpha": 0.05801088589867898,
+    "Information Ratio": 0.3267505764082113,
+    "Total Commissions": 10535.87,
+    "Total Slippage Costs": 50633.07
+  },
+  "benchmarks": {
+    "KN_US_Equity_Core": {
+      "Annualized Return (CAGR)": 0.10451208408473556,
+      "Annualized Volatility": 0.20010631925981373,
+      "Portfolio Sharpe Ratio": 0.5222827768324464,
+      "Portfolio Sortino Ratio": 0.6855043160836345,
+      "Max Drawdown": -0.5266640980723433
+    },
+    "SPY": {
+      "Annualized Return (CAGR)": 0.10392177037699923,
+      "Annualized Volatility": 0.19987654113620526,
+      "Portfolio Sharpe Ratio": 0.5199298015977876,
+      "Portfolio Sortino Ratio": 0.7310238172568129,
+      "Max Drawdown": -0.5518463924119704
+    }
+  },
+  "tasa_libre_de_riesgo": 0.0
+}

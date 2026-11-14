@@ -8,19 +8,25 @@ riesgo bajo control.
 > Investigación y aprendizaje, no asesoría de inversión. Las cifras vienen de backtests sobre
 > precios pasados.
 
-## El modelo principal (v2, congelado el 2026-11-14): "C2 confirmada"
+> **Para correr el backtest del modelo principal: [`COMO_CORRER.md`](COMO_CORRER.md).** El repo trae los pesos
+> (`modelo_principal_c2/weights.csv`) y los precios listos para el Backtest Engine (`motor/precios/`).
 
-**Las 10 acciones de momentum con régimen de mercado del modelo anterior, con un núcleo que rota
-entre los 2 sectores cíclicos más fuertes y salidas a refugio confirmadas por un modelo de riesgo
-entrenado con 2000–2009.** Reglas, resultados y replicación:
-**[`modelo_principal_c2/MODELO_PRINCIPAL.md`](modelo_principal_c2/MODELO_PRINCIPAL.md)**.
+## El modelo principal (v3, congelado el 2026-11-14): "Momentum concentrado"
 
-| Backtest Engine, 2007-03-01 a 2026-11-06 | Modelo principal v2 | KN US Equity Core |
+**La misma estructura de la v2 (régimen de mercado, núcleo de sectores cíclicos y freno de emergencia
+confirmado por un modelo de riesgo), con las 3 acciones de momentum más fuerte a 20% cada una.**
+Reglas, pruebas contra el sobreajuste, resultados y replicación:
+**[`modelo_principal_v3/MODELO_PRINCIPAL.md`](modelo_principal_v3/MODELO_PRINCIPAL.md)**.
+
+| Backtest Engine, 2007-03-01 a 2026-11-06 | Modelo principal v3 | KN US Equity Core |
 | --- | --- | --- |
-| CAGR | **14.74%** (13.78% con costos de estrés) | 10.45% |
-| Alfa vs KN Core (CAGR − CAGR del KN) | **+4.28%** (+3.33% con costos de estrés) | — |
-| Alfa 2010–2026, fuera de muestra del modelo de riesgo | +1.98% (+1.06% con estrés) | — |
-| Caída máxima | **−33.8%** | −52.7% |
+| CAGR | **17.82%** (16.62% con costos de estrés) | 10.45% |
+| Alfa vs KN Core | **+7.37%** (+6.17% con estrés) | — |
+| Alfa 2010–2026 (fuera de muestra del modelo de riesgo) | +5.97% (+4.78% con estrés) | — |
+| Sharpe | 0.68 | 0.52 |
+| Caída máxima | **−34.0%** | −52.7% |
+
+Versión previa v2: [`modelo_principal_c2/`](modelo_principal_c2/MODELO_PRINCIPAL.md) (+4.28% de alfa).
 
 ## Versión previa (congelada el 2026-11-13; componente de acciones del v2)
 
@@ -50,7 +56,8 @@ están en este repositorio.
 | --- | --- |
 | `MODELO_ACTUAL.md` | Modelo principal congelado: reglas, parámetros, resultados y replicación |
 | `MODELO_PRINCIPAL_CONGELADO.md5` | Huellas md5 de la versión congelada |
-| **`modelo_principal_c2/`** | **Modelo principal desde el 2026-11-14 ("C2 confirmada")**: reglas, resultados, replicación y md5. Alfa vs KN Core +4.28% (+3.33% con estrés), CAGR 14.74%, caída −33.8%, 2007–2026 |
+| **`modelo_principal_v3/`** | **Modelo principal desde el 2026-11-14 ("Momentum concentrado")**: +7.37% de alfa (+6.17% con estrés), CAGR 17.82%, caída −34.0% |
+| `modelo_principal_c2/` | Versión previa v2 ("C2 confirmada"): reglas, resultados, replicación y md5. Alfa vs KN Core +4.28% (+3.33% con estrés), CAGR 14.74%, caída −33.8%, 2007–2026 |
 | `MODELO_M2.md` | Modelo M2, de régimen con 20 acciones (anterior) |
 | `ESTRATEGIA_NUCLEO_SATELITE.md` | Estrategia C0, núcleo SPY + satélite de momentum, 2000–2026 (primera versión) |
 | `modelo_regimen.py` | Señales, regímenes, interruptor y `weights.csv` del modelo principal y de M2 |

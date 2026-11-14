@@ -1,5 +1,9 @@
 # Modelo principal (v2): "C2 confirmada"
 
+> **VERSIÓN PREVIA desde el 2026-11-14.** El modelo principal es la v3, "Momentum concentrado"
+> (`modelo_principal_v3/MODELO_PRINCIPAL.md`): +7.37% de alfa (+6.17% con estrés). Esta versión sigue
+> congelada sin cambios.
+
 Equipo de Habib · Talavera Valley Hackathon 2026 · Track 04 WealthTech.
 
 > **Congelado el 2026-11-14 como modelo principal del equipo.** Reemplaza al modelo de

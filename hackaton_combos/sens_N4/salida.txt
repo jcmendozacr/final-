@@ -1,0 +1,69 @@
+[INFO] License acceptance from cache (no re-check needed yet)
+[INFO] Executing data pipeline for backtester creation
+[INFO] Detected horizontal format for weights.csv
+[INFO] Skipping zero-weight tickers: ['ADM', 'BLS', 'CMCSA', 'DTV1', 'EXPD', 'HOG', 'INCLF', 'MTLQQ', 'NYX1', 'Q1', 'SUNEQ', 'TXU']
+[INFO] Loading market data from 2007-01-18 instead of 2007-03-01 to fill the 20-day execution-cost windows
+[INFO] Execution-cost metrics: average daily volume and volatility over 20 trading days, from column 'm_volume_split_adjusted'
+[INFO] Execution-cost metrics: half spread estimated with corwin_schultz over 20 trading days
+[INFO] rebalance_date_handling=next_trading_day: every rebalancing date is a trading day, nothing moved.
+[WARNING] MEDI1 stops trading after 2007-06-18: its whole position will be sold on 2007-06-18 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] UST1 stops trading after 2009-01-05: its whole position will be sold on 2009-01-05 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] FRX1 stops trading after 2014-06-30: its whole position will be sold on 2014-06-30 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] PCYC stops trading after 2015-05-22: its whole position will be sold on 2015-05-22 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] GMCR stops trading after 2016-03-02: its whole position will be sold on 2016-03-02 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] APC1 stops trading after 2019-08-08: its whole position will be sold on 2019-08-08 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[INFO] Total Time in data loading and validation for 269 tickers: 0h 0m 26.86s
+[INFO] Checking data integrity for 246 rebalancing dates
+[INFO] Data integrity check passed - every rebalancing date has prices for the positions it touches, and no position outlives its price series
+[INFO] Data pipeline completed successfully, constructing backtester
+[INFO] Using 267 active tickers
+[INFO] Starting PyArrow backtest execution for weights
+[INFO] Processing 4955 trading days (from 2007-03-01 00:00:00 to 2026-11-06 00:00:00), 246 rebalancing dates
+Forced liquidation of MEDI1 on 2007-06-18 (last price 2007-06-18): sold 16595.0 shares at 1.0032 for 16648.92, commission 1.67. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of UST1 on 2009-01-05 (last price 2009-01-05): sold 4334.0 shares at 1.9053 for 8257.45, commission 0.83. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of FRX1 on 2014-06-30 (last price 2014-06-30): sold 14431.0 shares at 2.3588 for 34039.63, commission 3.41. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of PCYC on 2015-05-22 (last price 2015-05-22): sold 508.0 shares at 71.3066 for 36223.73, commission 3.62. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of GMCR on 2016-03-02 (last price 2016-03-02): sold 533.0 shares at 30.3545 for 16178.92, commission 1.62. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of APC1 on 2019-08-08 (last price 2019-08-08): sold 10330.0 shares at 4.6720 for 48261.95, commission 4.83. The proceeds stay in cash until the next scheduled rebalance.
+[INFO] PyArrow backtest execution completed successfully
+[INFO] Total time in backtesting execution: 0h 0m 0.72s
+[INFO] Excel report successfully saved to: C:\Users\Zkilp\Downloads\Modelo-main\hackaton_combos\sens_N4\backtest_2007_base\weights_20261114101425_backtest_results.xlsx
+{
+  "ventana_pedida": [
+    "2007-03-01",
+    "2026-11-06"
+  ],
+  "ventana_valuada": [
+    "2007-03-01",
+    "2026-11-06"
+  ],
+  "años_valuados": 20.38095238095238,
+  "portafolio": {
+    "Annualized Return (CAGR)": 0.15902877235951407,
+    "Annualized Volatility": 0.2515784960887216,
+    "Portfolio Sharpe Ratio": 0.6321238692174669,
+    "Portfolio Sortino Ratio": 0.8396000042690263,
+    "Max Drawdown": -0.3634377177432706,
+    "Alpha": 0.05451668970406964,
+    "Information Ratio": 0.31363244349230623,
+    "Total Commissions": 10647.97,
+    "Total Slippage Costs": 51782.25
+  },
+  "benchmarks": {
+    "KN_US_Equity_Core": {
+      "Annualized Return (CAGR)": 0.10451208265544443,
+      "Annualized Volatility": 0.20010631925981373,
+      "Portfolio Sharpe Ratio": 0.5222827696897877,
+      "Portfolio Sortino Ratio": 0.6855043160836345,
+      "Max Drawdown": -0.5266640980723433
+    },
+    "SPY": {
+      "Annualized Return (CAGR)": 0.10392176965491084,
+      "Annualized Volatility": 0.19987654113620526,
+      "Portfolio Sharpe Ratio": 0.5199297979851156,
+      "Portfolio Sortino Ratio": 0.7310238172568129,
+      "Max Drawdown": -0.5518463924119704
+    }
+  },
+  "tasa_libre_de_riesgo": 0.0
+}

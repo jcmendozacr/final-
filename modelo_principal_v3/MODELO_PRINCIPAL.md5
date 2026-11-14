@@ -1,0 +1,13 @@
+93df96d7497fea54bbb9ffaa3188c952 *modelo_principal_v3/weights.csv
+3f042970800971f896b2f2fd6e272bb9 *modelo_principal_v3/acciones_por_fecha.csv
+a12a9c21a6d689da75d60e78f26e6e50 *resultados_regimen_n3_a60/weights.csv
+c87bb3582d004489efab874a93eb777e *hackaton_combos/C2_20pct/weights.csv
+405d35941a28b8d9f166cd047b85b7c4 *hackaton_etf/ciclicos6_top2/weights.csv
+aa27c835a0f734733e021abd44781e8c *modelo_regimen.py
+15effab20785d91bbe7da05c529f428b *filtro_riesgo/filtro.py
+75ebfd666f9a608e081fa2358c291c34 *hackaton_etf/filtros_ciclicos.py
+77aaefed2a0e2165af5e56ab5df33f19 *hackaton_combos/variante_20pct.py
+34ed87058322d247a44989688a06ff33 *hackaton_combos/variante_okrus_20pct.py
+efe23013c5af95492b7fca65d20b3645 *hackaton_combos/escalar_motor.py
+99d07e7b1e3a749be056d63b0ead623b *correr_backtest.py
+29e85d5015cc5d83fc5ce4b7d1393458 *preparar_motor.py
