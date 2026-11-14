@@ -1,4 +1,4 @@
-# Pitch · Los LITpsteins
+# Pitch · DHAR Capital (equipo Los LITpsteins)
 
 Talavera Valley Hackathon 2026 · Track 04 WealthTech · *Alfa a la vista*. Duración: **5 minutos**,
 13 láminas.
@@ -22,15 +22,15 @@ Talavera Valley Hackathon 2026 · Track 04 WealthTech · *Alfa a la vista*. Dura
 | 2. Solución e innovación (20%) | Láminas 5 y 6: qué compra (acciones, ETFs de sector, bonos) y cuánto según dos alarmas; lámina 7: alfa a la vista | — |
 | 3. Uso significativo de la tecnología (20%) | Láminas 5 y 6: el algoritmo decide y explica; Ana no necesita saber de inversiones. Investment Lab de KaxaNuk | — |
 | 4. MVP y experimentación (20%) | Lámina 7: demo en vivo ([Reporte de Ana](https://claude.ai/artifact/FAKN1wuQbFLrHEw2MN4H8u), `demo/`). Lámina 12: 40 variantes, 158 corridas, 3 versiones | Ya probada con un usuario |
-| 5. Impacto, negocio y continuidad (15%) | Lámina 11: quién paga, cuánto, primer cliente (DHAR Capital) y plan de 30/60/90 días | — |
+| 5. Impacto, negocio y continuidad (15%) | Lámina 11: quién paga, cuánto, perfil del primer cliente (empresa de Puebla con equipo joven) y plan de 30/60/90 días | — |
 | 6. Pitch y demo (5%) | Estructura problema → solución → demo → evidencia → negocio, ~5 min | Ensayar con cronómetro |
 
-## Guion (texto para decir en voz alta, ~909 palabras ≈ 5 minutos)
+## Guion (texto para decir en voz alta, ~914 palabras ≈ 5 minutos)
 
 Es el mismo texto de las notas de cada lámina. Lo que va entre paréntesis es una acción, no se dice.
 
 ### 1 · Portada (0:00–0:10)
-Hola, somos Los LITpsteins. Hacemos inversión activa que le gana al mercado, explicada para que cualquiera la entienda, para un mejor retiro. Les cuento la historia de Miguel y Ana.
+Hola, somos DHAR Capital. Hacemos inversión activa que le gana al mercado, explicada para que cualquiera la entienda, para un mejor retiro. Les cuento la historia de Miguel y Ana.
 
 ### 2 · Miguel y Ana (0:10–0:30)
 Miguel tiene 60 años y se jubila con la Ley 73: su pensión la paga el gobierno. Ana tiene 22 y acaba de entrar a su primer trabajo. Su pensión depende de cuánto ahorre y de cuánto le rinda durante 43 años. Hacia 2030 se aportará el 15% de su salario, y hoy no tiene forma fácil de saber si le está rindiendo bien.
@@ -60,13 +60,13 @@ Comparado con sus otras opciones, Ana gana más con menos caída, y sabe cada me
 De cada 100 dólares, en el peor momento le quedaron 66; al índice, 47. Esa caída fue con los aranceles de 2025 y se recuperó en seis meses. Habrá años en que perdamos contra el índice. El mayor riesgo de Ana no es el algoritmo: es vender por miedo.
 
 ### 11 · Modelo de negocio y siguientes pasos (3:40–4:10)
-¿Quién paga? La empresa de Ana, como prestación: retiene talento y Ana ahorra vía nómina. ¿Cuánto? Cerca de 0.5% al año sobre lo invertido: mil empleados ahorrando 100 dólares al mes son 1.2 millones el primer año y la cuota crece con cada aportación. Nuestro primer cliente: DHAR Capital. En 30 días, piloto con su equipo; en 60, alianza con una casa de bolsa registrada ante la CNBV; en 90, dos empresas más y la conversación con inversionistas.
+¿Quién paga? La empresa de Ana, como prestación: retiene talento y Ana ahorra vía nómina. ¿Cuánto? Cerca de 0.5% al año sobre lo invertido: mil empleados ahorrando 100 dólares al mes son 1.2 millones el primer año y la cuota crece con cada aportación. Nuestro primer cliente: una empresa de Puebla con equipo joven. En 30 días, piloto con sus empleados; en 60, alianza con una casa de bolsa registrada ante la CNBV; en 90, dos empresas más y la conversación con inversionistas.
 
 ### 12 · Por qué no hay sobreajuste ni sesgo (4:10–4:45)
 ¿Cómo sabemos que no es suerte? Probamos 40 variantes en 158 corridas, y cada una tuvo su criterio escrito antes de correrla. Sobreajustar es memorizar las respuestas de un examen viejo; para evitarlo, lo examinamos con años que nunca vio: la regla de acciones se diseñó con datos desde 2012 y en 2007 a 2014 le ganó al índice por 3.9 puntos al año. Movimos las perillas: las 7 versiones le ganan al índice y la nuestra no es la que más rinde. Y sin sesgo: usamos las empresas que existían en cada fecha, incluidas las que quebraron, y nunca información del futuro.
 
 ### 13 · Cierre (4:45–5:00)
-Miguel tiene al gobierno. Ana puede tener una estrategia que trabaje por ella, con el alfa y el riesgo a la vista cada mes. Somos Los LITpsteins. Gracias.
+Miguel tiene al gobierno. Ana puede tener una estrategia que trabaje por ella, con el alfa y el riesgo a la vista cada mes. Somos DHAR Capital. Gracias.
 
 ## Lámina de método (texto de apoyo)
 
@@ -107,5 +107,5 @@ Miguel tiene al gobierno. Ana puede tener una estrategia que trabaje por ella, c
 | Meses por escenario: 62% sin alarmas, 26% una alarma, 9% bonos, 3% solo sectores; promedio 45.3% acciones, 45.3% ETFs de sector y 9.4% bonos (SHY 6.0%, IEF 3.4%), redondeado a 45/45/10 | `demo/datos.json` (carteras de `modelo_principal_v3/weights.csv`) |
 | 30% menos falsas alarmas | `filtro_riesgo/resumen.json` |
 | De 35% a 7% anual | Prueba de la estrategia V1 con universo sin sesgo |
-| Usuario que probó la demo; comentario de Arturo (KaxaNuk); DHAR Capital como primer cliente | Información del equipo, 14 de noviembre de 2026 |
+| Usuario que probó la demo; comentario de Arturo (KaxaNuk); nombre de la empresa: DHAR Capital | Información del equipo, 14 de noviembre de 2026 |
 | Cuota ~0.5% y canal B2B2C | Borrador del modelo de negocio (`hackathon_progreso.md`) |

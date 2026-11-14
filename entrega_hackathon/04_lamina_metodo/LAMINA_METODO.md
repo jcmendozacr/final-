@@ -1,4 +1,4 @@
-# Lámina de método · Los LITpsteins
+# Lámina de método · DHAR Capital
 
 
 1. **Lógica antes que datos.** Momentum, tendencia, canario de tasas y volatilidad, con literatura

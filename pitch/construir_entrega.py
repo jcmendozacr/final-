@@ -61,7 +61,7 @@ def regenerar_guion():
 VISOR = """<!doctype html>
 <html lang="es"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pitch Los LITpsteins</title>
+<title>DHAR Capital</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@400;600&display=swap">
 <style>
 {css}
@@ -120,7 +120,7 @@ def lamina_metodo(destino: Path):
     texto = (PITCH / "PITCH.md").read_text()
     a = texto.index("## Lámina de método")
     b = texto.index("## Cifras citadas")
-    (destino / "LAMINA_METODO.md").write_text("# Lámina de método · Los LITpsteins\n\n" + texto[a:b].split("\n", 1)[1])
+    (destino / "LAMINA_METODO.md").write_text("# Lámina de método · DHAR Capital\n\n" + texto[a:b].split("\n", 1)[1])
 
 
 def copiar(origen, destino):

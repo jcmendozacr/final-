@@ -1,4 +1,6 @@
-# Los LITpsteins · Alfa a la vista
+# DHAR Capital · Alfa a la vista
+
+Equipo Los LITpsteins.
 
 Talavera Valley Hackathon 2026 · Track 04 WealthTech · Tec de Monterrey, Puebla.
 
@@ -63,7 +65,7 @@ en SHY (10.25% anual, peor caída −18.2%).
 - Un usuario probó la demo durante el hackathon, le gustó y dijo que sí invertiría con nosotros.
 - Arturo (KaxaNuk), mentor: entre más tiempo abarque el backtest, mejor, para ver cómo se comporta
   en los peores y en los mejores momentos. El backtest cubre 19.7 años con 4 crisis.
-- Primer cliente piloto: DHAR Capital.
+- Primer cliente: una empresa de Puebla con empleados jóvenes que lo ofrezca como prestación (plan de 30/60/90 días en la lámina 11).
 
 ---
 
