@@ -1,18 +1,22 @@
 <section id="metodo">
 <svg class="bggrid" aria-label="Retícula de fondo" width="1920" height="1080" viewBox="0 0 1920 1080"><defs><pattern id="g9" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0 L0 0 0 80" fill="none" stroke="#111A22" stroke-width="1"/></pattern></defs><rect width="1920" height="1080" fill="url(#g9)"/></svg>
-<div class="top"><p class="eyebrow">LÁMINA DE MÉTODO</p><p class="pg">10 / 11</p></div>
-<h2>Cómo evitamos el sobreajuste</h2>
+<div class="top"><p class="eyebrow">LÁMINA DE MÉTODO · EXPERIMENTACIÓN</p><p class="pg">12 / 13</p></div>
+<h2>Por qué no hay sobreajuste ni sesgo.</h2>
+<div class="row">
+<div class="kpi plain in" style="--i:0;flex:1"><p class="v" style="font-size:64px">40</p><p class="l">variantes probadas, cada una con su criterio escrito antes de correrla</p></div>
+<div class="kpi plain in" style="--i:1;flex:1"><p class="v" style="font-size:64px">158</p><p class="l">corridas en el Backtest Engine de KaxaNuk, con costos normales y de estrés</p></div>
+<div class="kpi in" style="--i:2;flex:1.4"><p class="v" style="font-size:56px">+3.0 → +4.3 → +7.4</p><p class="l">puntos de alfa en las 3 versiones del modelo durante el hackathon</p></div>
+</div>
 <div class="row grow">
 <div class="col grow" style="gap:20px">
-<div class="step in" style="--i:0"><p class="n">01</p><p class="t"><b>Lógica antes que datos.</b> Momentum, tendencia, canario de tasas y volatilidad, con literatura publicada, escritos antes de cada backtest.</p></div>
-<div class="step in" style="--i:1"><p class="n">02</p><p class="t"><b>Criterio fijado antes de correr.</b> Cada variante tuvo su regla de aceptación por escrito; las que no la cumplieron se descartaron y quedaron documentadas.</p></div>
-<div class="step in" style="--i:2"><p class="n">03</p><p class="t"><b>Datos que no se usaron para diseñar.</b> Modelo de riesgo: entrenado con 2000–2009, quitó <b>30%</b> de las falsas alarmas en 2010–2026. Regla de acciones: en 2007–2014, que su diseño no usó, le ganó al KN por <b>+3.9</b> puntos al año.</p></div>
+<div class="step in" style="--i:3"><p class="n">01</p><p class="t"><b>Primero la lógica.</b> Cada regla tiene una razón económica publicada, escrita antes de ver los datos. Sobreajustar es memorizar las respuestas de un examen viejo.</p></div>
+<div class="step in" style="--i:4"><p class="n">02</p><p class="t"><b>Años que nunca vio.</b> La regla de acciones se diseñó con datos desde 2012 y en 2007–2014 le ganó al índice por <b>+3.9</b> puntos al año. El modelo de riesgo aprendió con 2000–2009 y después quitó <b>30%</b> de las falsas alarmas.</p></div>
 </div>
 <div class="col grow" style="gap:20px">
-<div class="step in" style="--i:3"><p class="n">04</p><p class="t"><b>Sin sesgo de supervivencia.</b> El universo es el KN Core de cada fecha. Con una lista de “ganadoras” elegida hoy, una estrategia pasó de <b>35%</b> a <b>7%</b> anual al corregirlo.</p></div>
-<div class="step in" style="--i:4"><p class="n">05</p><p class="t"><b>Robustez.</b> <b>6 de 7</b> variantes de parámetros superan al modelo previo, y los elegidos no son los que más rinden. Los sectores los define Morningstar, no nosotros.</p></div>
-<div class="step in" style="--i:5"><p class="n">06</p><p class="t"><b>Investment Lab y costos reales.</b> Data Curator, Backtest Engine y Attribution Analysis de KaxaNuk; costos de estrés (5 + 10 pb), ejecución al día siguiente y resultados reproducibles con md5.</p></div>
+<div class="step in" style="--i:5"><p class="n">03</p><p class="t"><b>Movimos las perillas.</b> Las <b>7 de 7</b> variantes de parámetros le ganan al índice, y la elegida no es la que más rinde.</p></div>
+<div class="step in" style="--i:6"><p class="n">04</p><p class="t"><b>Sin sesgo de supervivencia.</b> Usamos las empresas del índice en cada fecha, incluidas las que quebraron. Hacerlo mal llevó una prueba de <b>35%</b> a <b>7%</b> al año.</p></div>
 </div>
 </div>
-<aside>[4:00–4:35] Nuestra lámina de método. Uno: la lógica económica va antes que los datos. Dos: cada variante tuvo un criterio de aceptación escrito antes de correrla. Tres: probamos con datos que no usamos para diseñar: el modelo de riesgo se entrenó con 2000 a 2009 y la regla de acciones le ganó al índice en 2007 a 2014, años que su diseño no vio. Cuatro: sin sesgo de supervivencia; una estrategia con ganadoras elegidas hoy pasó de 35% a 7% al corregirlo. Cinco: robustez; 6 de 7 variantes de parámetros superan al modelo previo, y no elegimos los que más rinden. Seis: Investment Lab de KaxaNuk, costos de estrés y todo reproducible.</aside>
+<p class="footer">Nada del futuro: se decide al cierre del mes y se compra al día siguiente, con costos de estrés (5 + 10 pb). Reproducible con md5 en el Investment Lab de KaxaNuk.</p>
+<aside>[4:10–4:45] ¿Cómo sabemos que no es suerte? Probamos 40 variantes en 158 corridas, y cada una tuvo su criterio escrito antes de correrla. Sobreajustar es memorizar las respuestas de un examen viejo; para evitarlo, lo examinamos con años que nunca vio: la regla de acciones se diseñó con datos desde 2012 y en 2007 a 2014 le ganó al índice por 3.9 puntos al año. Movimos las perillas: las 7 versiones le ganan al índice y la nuestra no es la que más rinde. Y sin sesgo: usamos las empresas que existían en cada fecha, incluidas las que quebraron, y nunca información del futuro.</aside>
 </section>

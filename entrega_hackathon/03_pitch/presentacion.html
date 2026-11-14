@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pitch Los LITpsteins</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@400;600&display=swap">
+<style>
+:root {
+  --bg: #080D12;
+  --panel: #111A22;
+  --line: #1E2A35;
+  --lime: #C7FF35;
+  --text: #F4F7F9;
+  --muted: #84919D;
+  --red: #FF626B;
+}
+body { font-family: 'Inter', Arial, sans-serif; color: #F4F7F9; }
+section { counter-increment: page; padding: 128px 128px 160px; background: #080D12; color: #F4F7F9; display: flex; flex-direction: column; gap: 36px; }
+h1, h2, h3 { font-family: 'Space Grotesk', Arial, sans-serif; color: #F4F7F9; }
+h1 { font-size: 112px; font-weight: 700; line-height: 1.02; letter-spacing: -2px; }
+h2 { font-size: 64px; font-weight: 700; line-height: 1.08; letter-spacing: -1px; }
+h3 { font-size: 36px; font-weight: 600; line-height: 1.15; }
+p { font-size: 28px; line-height: 1.35; color: #F4F7F9; }
+.bggrid { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+.top { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1E2A35; padding-bottom: 16px; }
+.eyebrow { font-size: 24px; font-weight: 600; letter-spacing: 3px; color: #C7FF35; }
+.pg { font-size: 24px; letter-spacing: 2px; color: #84919D; }
+.lead { font-size: 36px; line-height: 1.3; color: #84919D; }
+.muted { color: #84919D; }
+.small { font-size: 24px; color: #84919D; }
+.footer { position: absolute; left: 128px; bottom: 64px; width: 1664px; font-size: 24px; color: #84919D; }
+.row { display: flex; gap: 32px; }
+.col { display: flex; flex-direction: column; gap: 24px; }
+.grow { flex: 1; }
+.panel { background: #111A22; border: 1px solid #1E2A35; border-radius: 4px; padding: 32px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
+.panel.hl { border-color: #C7FF35; }
+.panel .tag { font-size: 24px; font-weight: 600; letter-spacing: 2px; color: #84919D; }
+.panel.hl .tag { color: #C7FF35; }
+.panel .body { font-size: 26px; line-height: 1.35; color: #84919D; }
+.kpi { background: #111A22; border: 1px solid #1E2A35; border-left: 4px solid #C7FF35; padding: 24px 28px; display: flex; flex-direction: column; gap: 6px; }
+.kpi.neg { border-left-color: #FF626B; }
+.kpi .v { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 80px; font-weight: 700; line-height: 1; color: #C7FF35; font-variant-numeric: tabular-nums; }
+.kpi.neg .v { color: #FF626B; }
+.kpi.plain .v { color: #F4F7F9; }
+.kpi .l { font-size: 24px; line-height: 1.3; color: #84919D; }
+.chart { position: relative; background: #111A22; border: 1px solid #1E2A35; border-radius: 4px; }
+.ax { position: absolute; font-size: 24px; color: #84919D; white-space: nowrap; }
+.lbl { position: absolute; font-size: 24px; font-weight: 600; white-space: nowrap; }
+.lime { color: #C7FF35; }
+.red { color: #FF626B; }
+.step { background: #111A22; border: 1px solid #1E2A35; border-radius: 4px; padding: 26px 28px; display: flex; gap: 22px; flex: 1; }
+.step .n { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 36px; font-weight: 700; color: #C7FF35; width: 56px; }
+.step .t { font-size: 24px; line-height: 1.35; color: #84919D; flex: 1; }
+.step .t b { color: #F4F7F9; }
+.quote { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 80px; font-weight: 700; line-height: 1.08; letter-spacing: -1px; color: #F4F7F9; }
+@keyframes rise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.in { animation: rise 550ms ease-out both; animation-delay: calc(var(--i, 0) * 110ms); }
+
+html,body{margin:0;height:100%;background:#000;overflow:hidden}
+#escena{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform-origin:0 0}
+section{position:absolute;inset:0;width:1920px;height:1080px;box-sizing:border-box;overflow:hidden;display:none}
+section.activa{display:flex}
+section aside{display:none}
+p,h1,h2,h3{margin:0}
+#notas{position:fixed;left:0;right:0;bottom:0;max-height:34%;overflow:auto;background:#111A22;color:#F4F7F9;
+  font:18px/1.45 Inter,Arial,sans-serif;padding:14px 20px;border-top:2px solid #C7FF35;display:none}
+#ayuda{position:fixed;right:12px;top:10px;color:#84919D;font:13px Inter,Arial,sans-serif}
+@media print{
+  @page{size:1920px 1080px;margin:0}
+  html,body{overflow:visible;height:auto;background:#080D12}
+  #escena{position:static;transform:none!important}
+  section{position:relative;display:flex!important;page-break-after:always;break-after:page}
+  #notas,#ayuda{display:none!important}
+  .in{animation:none}
+}
+</style></head><body>
+<div id="escena">
+<section id="cover" data-transition="fade">
+<svg class="bggrid" aria-label="Retícula de fondo" width="1920" height="1080" viewBox="0 0 1920 1080"><defs><pattern id="gc" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0 L0 0 0 80" fill="none" stroke="#111A22" stroke-width="1"/></pattern></defs><rect width="1920" height="1080" fill="url(#gc)"/></svg>
+<div class="top"><p class="eyebrow">TALAVERA VALLEY HACKATHON 2026 · TRACK 04 WEALTHTECH</p><p class="pg">LOS LITPSTEINS</p></div>
+<div class="grow"></div>
+<h1 class="in" style="--i:0;width:1400px">A Ana nadie le garantiza su pensión.</h1>
+<p class="lead in" style="--i:2;width:1300px">Una estrategia en dólares que le gana al KN US Equity Core, con el riesgo a la vista.</p>
+<p class="in" style="--i:3;font-size:28px;color:#C7FF35">«Inversión activa que genere alfa, de forma transparente, para un mejor retiro.»</p>
+<div class="grow"></div>
+<svg aria-label="Curva de capital real de la estrategia, 2007 a 2026" width="1664" height="110" viewBox="0 0 1100 440" preserveAspectRatio="none" style="width:1664px;height:110px"><path d="M0 379 L5 379 L9 370 L14 371 L19 366 L23 364 L28 354 L33 353 L37 360 L42 348 L47 360 L51 353 L56 356 L61 345 L65 342 L70 341 L75 353 L79 355 L84 372 L89 376 L93 375 L98 371 L103 374 L107 375 L112 372 L117 370 L121 371 L126 370 L131 363 L135 361 L140 354 L144 359 L149 355 L154 351 L158 362 L163 359 L168 354 L172 355 L177 368 L182 378 L186 367 L191 376 L196 364 L200 358 L205 348 L210 349 L214 345 L219 343 L224 344 L228 344 L233 348 L238 346 L242 343 L247 346 L252 352 L256 340 L261 340 L266 341 L270 337 L275 330 L280 331 L284 329 L289 335 L294 340 L298 344 L303 335 L308 330 L312 334 L317 331 L322 329 L326 323 L331 321 L336 316 L340 317 L345 314 L350 315 L354 312 L359 312 L364 304 L368 303 L373 300 L378 296 L382 298 L387 292 L392 295 L396 294 L401 290 L406 287 L410 294 L415 286 L419 290 L424 290 L429 290 L433 291 L438 288 L443 281 L447 282 L452 285 L457 277 L461 279 L466 274 L471 281 L475 283 L480 284 L485 284 L489 285 L494 292 L499 290 L503 291 L508 293 L513 296 L517 291 L522 288 L527 288 L531 283 L536 285 L541 270 L545 266 L550 264 L555 266 L559 265 L564 266 L569 260 L573 260 L578 257 L583 255 L587 253 L592 247 L597 246 L601 247 L606 243 L611 247 L615 253 L620 250 L625 246 L629 241 L634 249 L639 237 L643 232 L648 248 L653 247 L657 255 L662 255 L667 251 L671 248 L676 245 L681 256 L685 250 L690 246 L694 248 L699 253 L704 251 L708 247 L713 238 L718 227 L722 225 L727 237 L732 242 L736 236 L741 222 L746 211 L750 200 L755 191 L760 207 L764 195 L769 193 L774 186 L778 184 L783 194 L788 190 L792 185 L797 189 L802 181 L806 174 L811 178 L816 165 L820 171 L825 179 L830 187 L834 184 L839 178 L844 184 L848 181 L853 182 L858 181 L862 182 L867 183 L872 166 L876 164 L881 168 L886 169 L890 174 L895 175 L900 174 L904 168 L909 159 L914 152 L918 154 L923 160 L928 162 L932 150 L937 139 L942 141 L946 132 L951 117 L956 127 L960 119 L965 121 L969 126 L974 123 L979 125 L983 118 L988 84 L993 91 L997 82 L1002 90 L1007 99 L1011 101 L1016 96 L1021 84 L1025 74 L1030 81 L1035 70 L1039 67 L1044 69 L1049 67 L1053 50 L1058 48 L1063 47 L1067 27 L1072 13 L1077 0 L1081 25 L1086 22 L1091 21 L1095 21 L1100 29" fill="none" stroke="#C7FF35" stroke-width="3" vector-effect="non-scaling-stroke"/></svg>
+<p class="small">Curva de capital del modelo · Backtest Engine de KaxaNuk · 2007–2026</p>
+<aside>[0:00–0:10] Hola, somos Los LITpsteins. Hacemos inversión activa que le gana al mercado, explicada para que cualquiera la entienda, para un mejor retiro. Les cuento la historia de Miguel y Ana.</aside>
+</section>
+
+<section id="contraste">
+<svg class="bggrid" aria-label="Retícula de fondo" width="1920" height="1080" viewBox="0 0 1920 1080"><defs><pattern id="g2" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0 L0 0 0 80" fill="none" stroke="#111A22" stroke-width="1"/></pattern></defs><rect width="1920" height="1080" fill="url(#g2)"/></svg>
+<div class="top"><p class="eyebrow">DOS GENERACIONES, DOS SISTEMAS</p><p class="pg">02 / 13</p></div>
+<h2>Miguel tiene pensión garantizada. Ana no.</h2>
+<div class="row grow">
+<div class="panel in" style="--i:0">
+<p class="tag">MIGUEL · 60 AÑOS</p>
+<p class="kpi plain" style="border-left-color:#84919D;font-family:'Space Grotesk',Arial,sans-serif;font-size:56px;font-weight:700;line-height:1.1">Ley 73</p>
+<h3>Se jubila con la Ley 73</h3>
+<p class="body">Su pensión la paga el gobierno, pase lo que pase en los mercados.</p>
+</div>
+<div class="panel hl in" style="--i:2">
+<p class="tag">ANA · 22 AÑOS · PRIMER EMPLEO</p>
+<p class="kpi" style="font-family:'Space Grotesk',Arial,sans-serif;font-size:56px;font-weight:700;line-height:1.1;color:#C7FF35">43 años</p>
+<h3>Su pensión depende de su Afore</h3>
+<p class="body">Lo que reciba depende de cuánto ahorre y de cuánto rinda ese ahorro durante 43 años.</p>
+</div>
+</div>
+<div class="row">
+<div class="kpi in" style="--i:3;flex:1"><p class="v">15%</p><p class="l">del salario se aportará al retiro de Ana hacia 2030</p></div>
+<div class="kpi neg in" style="--i:4;flex:1"><p class="v">¿?</p><p class="l">si su dinero le está rindiendo bien: hoy no es fácil saberlo</p></div>
+</div>
+<p class="footer">Fuente: caso del reto WealthTech (Ley 73 / sistema de Afores)</p>
+<aside>[0:10–0:30] Miguel tiene 60 años y se jubila con la Ley 73: su pensión la paga el gobierno. Ana tiene 22 y acaba de entrar a su primer trabajo. Su pensión depende de cuánto ahorre y de cuánto le rinda durante 43 años. Hacia 2030 se aportará el 15% de su salario, y hoy no tiene forma fácil de saber si le está rindiendo bien.</aside>
+</section>
+
+<section id="brecha">
+<svg class="bggrid" aria-label="Retícula de fondo" width="1920" height="1080" viewBox="0 0 1920 1080"><defs><pattern id="g3" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0 L0 0 0 80" fill="none" stroke="#111A22" stroke-width="1"/></pattern></defs><rect width="1920" height="1080" fill="url(#g3)"/></svg>
+<div class="top"><p class="eyebrow">LO QUE LE FALTA A ANA</p><p class="pg">03 / 13</p></div>
+<h2>A 43 años, cada punto de rendimiento cuenta.</h2>
+<div class="row">
+<div class="kpi in" style="--i:0;flex:1"><p class="v">4%</p><p class="l">rendimiento real anual que proyecta la CONSAR para Ana</p></div>
+<div class="kpi plain in" style="--i:1;flex:1"><p class="v">~22%</p><p class="l">de su Siefore está en acciones; el resto, sobre todo en deuda</p></div>
+<div class="kpi plain in" style="--i:2;flex:1"><p class="v">2.0%</p><p class="l">real anual de los planes de pensiones de empresas a 5 años</p></div>
+</div>
+<div class="chart grow in" style="--i:3">
+<p class="ax" style="left:32px;top:20px">$1 AHORRADO HOY, EN 43 AÑOS (ILUSTRATIVO)</p>
+<svg aria-label="Crecimiento de 1 peso a 4% y a 8.8% real durante 43 años" width="1100" height="380" viewBox="0 0 1100 380" preserveAspectRatio="none" style="position:absolute;left:32px;top:64px;width:1160px;height:180px">
+<path d="M0 280 H1100 M0 180 H1100 M0 80 H1100" stroke="#1E2A35" stroke-width="1" fill="none" vector-effect="non-scaling-stroke"/>
+<path d="M0 370 L26 370 L51 369 L77 369 L102 368 L128 368 L153 367 L179 367 L205 366 L230 366 L256 365 L281 365 L307 364 L333 363 L358 363 L384 362 L409 361 L435 361 L460 360 L486 359 L512 358 L537 357 L563 356 L588 355 L614 354 L640 353 L665 352 L691 351 L716 350 L742 349 L767 348 L793 346 L819 345 L844 344 L870 342 L895 341 L921 339 L947 337 L972 336 L998 334 L1023 332 L1049 330 L1074 328 L1100 326" stroke="#84919D" stroke-width="3" fill="none" vector-effect="non-scaling-stroke"/>
+<path d="M0 370 L26 369 L51 368 L77 367 L102 366 L128 365 L153 363 L179 362 L205 360 L230 359 L256 357 L281 355 L307 352 L333 350 L358 347 L384 345 L409 341 L435 338 L460 334 L486 330 L512 326 L537 321 L563 316 L588 310 L614 304 L640 298 L665 290 L691 283 L716 274 L742 265 L767 254 L793 243 L819 231 L844 218 L870 204 L895 189 L921 172 L947 153 L972 133 L998 112 L1023 88 L1049 62 L1074 35 L1100 4" stroke="#C7FF35" stroke-width="4" fill="none" vector-effect="non-scaling-stroke"/>
+</svg>
+<p class="ax" style="left:32px;top:250px">Año 0</p>
+<p class="ax" style="left:1100px;top:250px">Año 43</p>
+<p class="lbl lime" style="left:1230px;top:60px">≈8.8% real → $37.3</p>
+<p class="lbl muted" style="left:1230px;top:200px">4% real → $5.4</p>
+</div>
+<p class="footer">Fuente: datos del caso (CONSAR). ≈8.8% = 4% + 4.78 puntos, el alfa con costos de estrés de 2010–2026 (fuera de muestra); ilustración, no promesa.</p>
+<aside>[0:30–0:45] La CONSAR proyecta para Ana un 4% real: cada peso que ahorra hoy se vuelve 5.4. Con casi 5 puntos más al año, ese mismo peso se vuelve unos 37. Es un ejemplo, no una promesa, pero muestra cuánto pesan unos puntos en 43 años.</aside>
+</section>
+
+<section id="validacion">
+<svg class="bggrid" aria-label="Retícula de fondo" width="1920" height="1080" viewBox="0 0 1920 1080"><defs><pattern id="g13" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0 L0 0 0 80" fill="none" stroke="#111A22" stroke-width="1"/></pattern></defs><rect width="1920" height="1080" fill="url(#g13)"/></svg>
+<div class="top"><p class="eyebrow">VALIDACIÓN · DURANTE EL HACKATHON</p><p class="pg">04 / 13</p></div>
+<h2>Lo probamos con un usuario y con un mentor.</h2>
+<div class="row grow">
+<div class="col" style="width:1040px;gap:20px">
+<div class="panel hl in" style="--i:0;flex:none;gap:8px;padding:20px 28px"><p class="tag">USUARIO · PROBÓ LA DEMO</p><h3>Le gustó y dijo que sí invertiría con nosotros.</h3><p class="body">Usó el Reporte de Ana durante el hackathon (fotos de la derecha).</p></div>
+<div class="panel in" style="--i:1;flex:none;gap:8px;padding:20px 28px"><p class="tag">MENTOR · ARTURO, KAXANUK</p><h3>Entre más tiempo abarque el backtest, mejor.</h3><p class="body">Así se ve cómo se comporta en los peores y en los mejores momentos.</p></div>
+<div class="panel in" style="--i:2;flex:none;gap:8px;padding:20px 28px"><p class="tag">LO QUE HICIMOS</p><h3>19.7 años de backtest, de 2007 a 2026.</h3><p class="body">Con 4 crisis adentro: 2008, COVID, 2022 y los aranceles de 2025.</p></div>
+</div>
+<div class="row grow in" style="--i:3;gap:16px">
+<img src="fotos/usuario_demo_1.jpg" alt="Usuario probando el Reporte de Ana en una laptop" width="296" height="540" style="width:296px;height:540px;object-fit:cover;object-position:50% 30%;border-radius:4px;border:1px solid #1E2A35">
+<img src="fotos/usuario_demo_2.jpg" alt="Usuario eligiendo el año de inicio en el Reporte de Ana" width="296" height="540" style="width:296px;height:540px;object-fit:cover;object-position:50% 30%;border-radius:4px;border:1px solid #1E2A35">
+</div>
+</div>
+<p class="footer">Prueba de la demo y mentoría durante el Talavera Valley Hackathon 2026, 14 de noviembre.</p>
+<aside>[0:45–1:05] No nos quedamos con la teoría. Un usuario probó nuestra demo durante el hackathon, le gustó y nos dijo que sí invertiría con nosotros. Y Arturo, de KaxaNuk, nos dijo que entre más tiempo abarque el backtest, mejor, porque así se ve cómo se comporta en los peores y en los mejores momentos. Por eso lo probamos en casi 20 años, con cuatro crisis adentro.</aside>
+</section>
+
+<section id="producto">
+<svg class="bggrid" aria-label="Retícula de fondo" width="1920" height="1080" viewBox="0 0 1920 1080"><defs><pattern id="g4" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0 L0 0 0 80" fill="none" stroke="#111A22" stroke-width="1"/></pattern></defs><rect width="1920" height="1080" fill="url(#g4)"/></svg>
+<div class="top"><p class="eyebrow">LA SOLUCIÓN · 1 DE 2 · QUÉ COMPRA</p><p class="pg">05 / 13</p></div>
+<h2>El dinero de Ana va a tres cosas.</h2>
+<div class="row grow">
+<div class="panel hl in" style="--i:0;gap:10px"><p class="tag">ACCIONES · 3 EMPRESAS</p><p class="kpi" style="border:none;padding:0;background:none;font-family:'Space Grotesk',Arial,sans-serif;font-size:56px;font-weight:700;line-height:1;color:#C7FF35">30–60%</p><p class="body"><span style="color:#F4F7F9">Las 3 con más impulso</span> de las 300 más grandes del KN US Equity Core: van subiendo, no caen más de 15% y subieron en 6 meses. <span style="color:#F4F7F9">Máximo 20% cada una.</span></p><p class="small">Noviembre 2026: Moderna, CrowdStrike y Palo Alto Networks.</p></div>
+<div class="panel in" style="--i:1;gap:10px"><p class="tag">ETFs DE SECTOR · 2 FONDOS</p><p class="kpi plain" style="border:none;padding:0;background:none;font-family:'Space Grotesk',Arial,sans-serif;font-size:56px;font-weight:700;line-height:1">40–100%</p><p class="body">Un ETF compra un sector completo. <span style="color:#F4F7F9">Tomamos los 2 que más subieron en 12 meses</span> entre 6: tecnología, finanzas, energía, consumo, industria y materiales.</p><p class="small">Noviembre 2026: materiales (XLB) y energía (XLE).</p></div>
+<div class="panel in" style="--i:2;gap:10px"><p class="tag">BONOS EN ETF · SOLO EN TORMENTA</p><p class="kpi plain" style="border:none;padding:0;background:none;font-family:'Space Grotesk',Arial,sans-serif;font-size:56px;font-weight:700;line-height:1">0 o 100%</p><p class="body">Bonos del Tesoro de EE.UU.: <span style="color:#F4F7F9">SHY (1 a 3 años) o IEF (7 a 10 años)</span>, el que vaya mejor. También cubren el lugar de una acción si no hay 3 que pasen el filtro.</p><p class="small">Última vez: enero de 2023.</p></div>
+</div>
+<div class="panel" style="flex:none;flex-direction:row;align-items:center;gap:28px;padding:20px 28px">
+<p class="tag" style="white-space:nowrap">PROMEDIO 2007–2026</p>
+<div style="display:flex;width:820px;height:44px;border-radius:3px;overflow:hidden">
+<div style="width:45%;background:#C7FF35;display:flex;align-items:center;padding-left:14px"><p style="font-size:24px;font-weight:600;color:#080D12">Acciones 45%</p></div>
+<div style="width:45%;background:#F4F7F9;display:flex;align-items:center;padding-left:14px"><p style="font-size:24px;font-weight:600;color:#080D12">ETFs de sector 45%</p></div>
+<div style="width:10%;background:#84919D;display:flex;align-items:center;padding-left:10px"><p style="font-size:24px;font-weight:600;color:#080D12">10%</p></div>
+</div>
+<p class="small" style="color:#F4F7F9;white-space:nowrap">Bonos 10%: SHY 6%, IEF 4%</p>
+</div>
+<p class="footer">Datos: Data Curator de KaxaNuk. Promedio de las carteras de los 237 meses del backtest. Ejemplos de noviembre de 2026, no recomendación.</p>
+<aside>[1:05–1:35] ¿En qué invierte el dinero de Ana? En tres cosas. Uno, acciones: las 3 empresas con más impulso de las 300 más grandes de Estados Unidos, con máximo 20% en cada una; este mes, Moderna, CrowdStrike y Palo Alto. Lo que sube con fuerza suele seguir subiendo un tiempo: se llama momentum. Dos, ETFs de sector: un ETF compra todo un sector de un jalón, como tecnología o energía; tomamos los 2 que más subieron en el año. Tres, bonos del gobierno de Estados Unidos, también en ETF, solo cuando hay tormenta. En promedio: 45% acciones, 45% sectores y 10% bonos.</aside>
+</section>
+
+<section id="reglas">
+<svg class="bggrid" aria-label="Retícula de fondo" width="1920" height="1080" viewBox="0 0 1920 1080"><defs><pattern id="g14" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0 L0 0 0 80" fill="none" stroke="#111A22" stroke-width="1"/></pattern></defs><rect width="1920" height="1080" fill="url(#g14)"/></svg>
+<div class="top"><p class="eyebrow">LA SOLUCIÓN · 2 DE 2 · UN MODELO DINÁMICO</p><p class="pg">06 / 13</p></div>
+<h2>Cuánto invierte depende de dos alarmas.</h2>
+<div class="row" style="gap:28px;align-items:center">
+<p class="small" style="width:440px">Cada fin de mes, la cartera de Ana:</p>
+<p class="small"><span style="display:inline-block;width:18px;height:18px;background:#C7FF35;vertical-align:middle;margin-right:8px"></span><span style="color:#F4F7F9">Acción</span></p>
+<p class="small"><span style="display:inline-block;width:18px;height:18px;background:#F4F7F9;vertical-align:middle;margin-right:8px"></span><span style="color:#F4F7F9">ETF de sector</span></p>
+<p class="small"><span style="display:inline-block;width:18px;height:18px;background:#84919D;vertical-align:middle;margin-right:8px"></span><span style="color:#F4F7F9">Bonos (ETF)</span></p>
+</div>
+<div class="col in" style="--i:0;gap:18px">
+<div class="row" style="align-items:center;gap:28px">
+<div class="col" style="width:440px;gap:2px"><h3 style="font-size:32px">Ninguna alarma</h3><p class="small">62% de los meses</p></div>
+<div style="display:flex;gap:4px;flex:1;height:68px">
+<div style="flex:20;background:#C7FF35;display:flex;align-items:center;justify-content:center"><p style="font-size:26px;font-weight:700;color:#080D12">20%</p></div>
+<div style="flex:20;background:#C7FF35;display:flex;align-items:center;justify-content:center"><p style="font-size:26px;font-weight:700;color:#080D12">20%</p></div>
+<div style="flex:20;background:#C7FF35;display:flex;align-items:center;justify-content:center"><p style="font-size:26px;font-weight:700;color:#080D12">20%</p></div>
+<div style="flex:20;background:#F4F7F9;display:flex;align-items:center;justify-content:center"><p style="font-size:26px;font-weight:700;color:#080D12">20%</p></div>
+<div style="flex:20;background:#F4F7F9;display:flex;align-items:center;justify-content:center"><p style="font-size:26px;font-weight:700;color:#080D12">20%</p></div>
+</div>
+</div>
+<div class="row" style="align-items:center;gap:28px">
+<div class="col" style="width:440px;gap:2px"><h3 style="font-size:32px">Una alarma</h3><p class="small">26% de los meses</p></div>
+<div style="display:flex;gap:4px;flex:1;height:68px">
+<div style="flex:10;background:#C7FF35;display:flex;align-items:center;justify-content:center"><p style="font-size:26px;font-weight:700;color:#080D12">10%</p></div>
+<div style="flex:10;background:#C7FF35;display:flex;align-items:center;justify-content:center"><p style="font-size:26px;font-weight:700;color:#080D12">10%</p></div>
+<div style="flex:10;background:#C7FF35;display:flex;align-items:center;justify-content:center"><p style="font-size:26px;font-weight:700;color:#080D12">10%</p></div>
+<div style="flex:35;background:#F4F7F9;display:flex;align-items:center;justify-content:center"><p style="font-size:26px;font-weight:700;color:#080D12">35%</p></div>
+<div style="flex:35;background:#F4F7F9;display:flex;align-items:center;justify-content:center"><p style="font-size:26px;font-weight:700;color:#080D12">35%</p></div>
+</div>
+</div>
+<div class="row" style="align-items:center;gap:28px">
+<div class="col" style="width:440px;gap:2px"><h3 style="font-size:32px">Dos alarmas</h3><p class="small">y el modelo de riesgo confirma · 9%</p></div>
+<div style="display:flex;gap:4px;flex:1;height:68px">
+<div style="flex:100;background:#84919D;display:flex;align-items:center;justify-content:center"><p style="font-size:26px;font-weight:700;color:#080D12">100% en bonos: SHY o IEF</p></div>
+</div>
+</div>
+</div>
+<div class="row grow">
+<div class="panel in" style="--i:1;gap:8px;padding:24px 28px"><p class="tag">ALARMA 1 · TENDENCIA</p><p class="body">El S&amp;P 500 cae <span style="color:#F4F7F9">debajo de su promedio de los últimos 10 meses</span>.</p></div>
+<div class="panel in" style="--i:2;gap:8px;padding:24px 28px"><p class="tag">ALARMA 2 · CANARIO DE TASAS</p><p class="body">Los bonos contra inflación (TIP) <span style="color:#F4F7F9">pierden en promedio a 1, 3, 6 y 12 meses</span>.</p></div>
+<div class="panel hl in" style="--i:3;gap:8px;padding:24px 28px"><p class="tag">SIEMPRE</p><p class="body"><span style="color:#F4F7F9">Ana no decide nada.</span> Se compra al día siguiente, sin préstamos ni ventas en corto.</p></div>
+</div>
+<p class="footer">Si suenan las dos alarmas y el modelo no confirma (3% de los meses), todo va a los 2 ETFs de sector. Perfil moderado: mitad en esto y mitad en SHY.</p>
+<aside>[1:35–2:05] No son reglas fijas: es un modelo dinámico que se adapta cada mes. ¿Cuánto en cada cosa? Depende de dos alarmas que revisamos cada fin de mes: si el S&amp;P 500 cae debajo de su promedio de 10 meses, y si los bonos contra inflación muestran estrés. Sin alarmas, 60% en las 3 acciones, 20% cada una, y 40% en los 2 sectores: así estuvo el 62% del tiempo. Con una alarma, las acciones bajan a 30% y los sectores suben a 70%. Con las dos, y si nuestro modelo de riesgo lo confirma, todo a bonos. Ana no decide nada; si quiere menos riesgo, el perfil moderado pone siempre la mitad en bonos.</aside>
+</section>
+
+<section id="transparencia">
+<svg class="bggrid" aria-label="Retícula de fondo" width="1920" height="1080" viewBox="0 0 1920 1080"><defs><pattern id="g11" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0 L0 0 0 80" fill="none" stroke="#111A22" stroke-width="1"/></pattern></defs><rect width="1920" height="1080" fill="url(#g11)"/></svg>
+<div class="top"><p class="eyebrow">DEMO EN VIVO · EL BACKTEST, MES A MES</p><p class="pg">07 / 13</p></div>
+<h2>El reporte que Ana recibe cada mes.</h2>
+<div class="row grow">
+<div class="col" style="width:520px">
+<div class="panel hl" style="flex:none;gap:10px;padding:24px">
+<p class="tag">ABRIR LA DEMO</p>
+<p class="body" style="color:#F4F7F9"><a href="https://claude.ai/artifact/FAKN1wuQbFLrHEw2MN4H8u" style="color:#C7FF35">Reporte de Ana</a>: elige perfil, ahorro mensual y mes. Calcula con los 237 meses reales del backtest. Un usuario la probó y dijo que sí invertiría.</p>
+</div>
+<div class="panel" style="flex:none;gap:6px;padding:24px">
+<p class="tag" style="color:#C7FF35">DE DÓNDE VINO EL ALFA · 2007–2026</p>
+<p class="small" style="color:#F4F7F9">Selección de acciones +1,670%</p>
+<div style="width:400px;height:14px;background:#C7FF35"></div>
+<p class="small" style="color:#F4F7F9">Factor momentum +1,029%</p>
+<div style="width:246px;height:14px;background:#C7FF35"></div>
+<p class="small" style="color:#F4F7F9">Exposición al mercado −310%</p>
+<div style="width:74px;height:14px;background:#FF626B"></div>
+</div>
+</div>
+<div class="panel hl in grow" style="--i:0;gap:18px">
+<div class="row" style="justify-content:space-between"><p class="tag">REPORTE DE ANA · OCTUBRE 2026</p><p class="small">Captura de la demo</p></div>
+<div class="row" style="gap:20px">
+<div class="kpi" style="flex:1"><p class="v" style="font-size:56px">+0.7 pts</p><p class="l">octubre: 0.0% contra −0.7% del KN US Equity Core</p></div>
+<div class="kpi" style="flex:1"><p class="v" style="font-size:56px">+35.4 pts</p><p class="l">en 2026: +44.1% contra +8.7% del KN US Equity Core</p></div>
+<div class="kpi neg" style="flex:1"><p class="v" style="font-size:56px">−27.3%</p><p class="l">caída desde el máximo del 22 de junio de 2026</p></div>
+</div>
+<p class="body"><span style="color:#F4F7F9">Por qué:</span> el mercado sigue arriba de su tendencia, pero el canario de tasas encendió una alarma. Por eso las acciones bajaron a la mitad: MU, MRNA y DELL a 10% cada una, y tecnología y energía a 35%.</p>
+</div>
+</div>
+<p class="footer">Backtest Engine de KaxaNuk, costos base, al 2026-11-06; ejemplo ilustrativo, no recomendación. Alfa: Attribution Analysis de KaxaNuk, contribución al rendimiento activo acumulado.</p>
+<aside>[2:05–2:45] (Abrir la demo.) Este es nuestro MVP: el backtest en vivo, convertido en el reporte que Ana recibe cada mes. Octubre de 2026: le ganó al índice por 0.7 puntos y en el año va 35 arriba; y aun así le decimos que está 27% abajo de su máximo de junio. Aquí ve qué tiene y por qué: sonó una alarma, así que las acciones bajaron a 30%. (Ir a octubre de 2008.) Y en 2008, el freno: el modelo de riesgo confirmó y su dinero se fue a bonos.</aside>
+</section>
+
+<section id="resultados">
+<svg class="bggrid" aria-label="Retícula de fondo" width="1920" height="1080" viewBox="0 0 1920 1080"><defs><pattern id="g6" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0 L0 0 0 80" fill="none" stroke="#111A22" stroke-width="1"/></pattern></defs><rect width="1920" height="1080" fill="url(#g6)"/></svg>
+<div class="top"><p class="eyebrow">BACKTEST OFICIAL · 19.7 AÑOS · CON 2008, COVID, 2022 Y ARANCELES 2025</p><p class="pg">08 / 13</p></div>
+<h2>Le gana al KN US Equity Core, después de costos.</h2>
+<div class="row">
+<div class="kpi in" style="--i:0;flex:1"><p class="v">+7.4%</p><p class="l">alfa anual contra el KN US Equity Core (+6.2% con costos de estrés)</p></div>
+<div class="kpi in" style="--i:1;flex:1"><p class="v">17.8%</p><p class="l">rendimiento anual, contra 10.5% del KN US Equity Core</p></div>
+<div class="kpi in" style="--i:2;flex:1"><p class="v">0.68</p><p class="l">Sharpe (rendimiento por riesgo), contra 0.52 del KN US Equity Core</p></div>
+<div class="kpi in" style="--i:3;flex:1"><p class="v">+4.8%</p><p class="l">alfa con costos de estrés en 2010–2026, años que el modelo de riesgo nunca vio</p></div>
+</div>
+<div class="chart grow in" style="--i:4">
+<p class="ax" style="left:32px;top:16px">VALOR DE $100,000 · ESCALA LOGARÍTMICA · PEOR CAÍDA −34.0% CONTRA −52.7% DEL KN</p>
+<svg aria-label="Curva de capital del modelo contra el KN US Equity Core, 2007 a 2026" width="1100" height="440" viewBox="0 0 1100 440" preserveAspectRatio="none" style="position:absolute;left:32px;top:56px;width:1200px;height:130px">
+<path d="M0 110 H1100 M0 220 H1100 M0 330 H1100" stroke="#1E2A35" stroke-width="1" fill="none" vector-effect="non-scaling-stroke"/>
+<path d="M0 378 L5 374 L9 370 L14 372 L19 375 L23 374 L28 370 L33 368 L37 372 L42 372 L47 379 L51 382 L56 383 L61 378 L65 376 L70 384 L75 386 L79 384 L84 394 L89 414 L93 423 L98 421 L103 429 L107 440 L112 431 L117 422 L121 417 L126 417 L131 409 L135 406 L140 401 L144 403 L149 397 L154 395 L158 399 L163 395 L168 389 L172 388 L177 396 L182 402 L186 395 L191 399 L196 390 L200 386 L205 386 L210 379 L214 377 L219 374 L224 373 L228 370 L233 371 L238 373 L242 375 L247 381 L252 390 L256 379 L261 379 L266 378 L270 373 L275 369 L280 365 L284 366 L289 373 L294 369 L298 367 L303 365 L308 362 L312 364 L317 363 L322 362 L326 357 L331 355 L336 351 L340 350 L345 347 L350 349 L354 343 L359 346 L364 342 L368 338 L373 335 L378 332 L382 336 L387 331 L392 330 L396 330 L401 327 L406 325 L410 327 L415 323 L419 324 L424 322 L429 319 L433 320 L438 322 L443 317 L447 318 L452 317 L457 316 L461 318 L466 316 L471 322 L475 325 L480 317 L485 317 L489 319 L494 325 L499 325 L503 318 L508 317 L513 316 L517 315 L522 312 L527 311 L531 311 L536 313 L541 309 L545 307 L550 305 L555 301 L559 301 L564 300 L569 299 L573 298 L578 296 L583 296 L587 293 L592 291 L597 288 L601 287 L606 281 L611 285 L615 287 L620 287 L625 284 L629 284 L634 280 L639 277 L643 276 L648 284 L653 282 L657 291 L662 283 L667 279 L671 278 L676 273 L681 280 L685 273 L690 272 L694 274 L699 272 L704 270 L708 266 L713 263 L718 263 L722 271 L727 286 L732 273 L736 267 L741 265 L746 259 L750 251 L755 255 L760 258 L764 246 L769 242 L774 243 L778 240 L783 236 L788 231 L792 230 L797 227 L802 225 L806 222 L811 227 L816 220 L820 221 L825 218 L830 224 L834 227 L839 223 L844 234 L848 234 L853 243 L858 234 L862 238 L867 248 L872 240 L876 235 L881 241 L886 234 L890 237 L895 233 L900 232 L904 231 L909 224 L914 221 L918 223 L923 228 L928 230 L932 221 L937 216 L942 215 L946 209 L951 206 L956 210 L960 205 L965 202 L969 201 L974 198 L979 196 L983 197 L988 190 L993 193 L997 189 L1002 191 L1007 198 L1011 198 L1016 192 L1021 186 L1025 184 L1030 182 L1035 178 L1039 176 L1044 176 L1049 176 L1053 175 L1058 175 L1063 181 L1067 170 L1072 165 L1077 166 L1081 166 L1086 163 L1091 164 L1095 164 L1100 167" stroke="#84919D" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"/>
+<path d="M0 379 L5 379 L9 370 L14 371 L19 366 L23 364 L28 354 L33 353 L37 360 L42 348 L47 360 L51 353 L56 356 L61 345 L65 342 L70 341 L75 353 L79 355 L84 372 L89 376 L93 375 L98 371 L103 374 L107 375 L112 372 L117 370 L121 371 L126 370 L131 363 L135 361 L140 354 L144 359 L149 355 L154 351 L158 362 L163 359 L168 354 L172 355 L177 368 L182 378 L186 367 L191 376 L196 364 L200 358 L205 348 L210 349 L214 345 L219 343 L224 344 L228 344 L233 348 L238 346 L242 343 L247 346 L252 352 L256 340 L261 340 L266 341 L270 337 L275 330 L280 331 L284 329 L289 335 L294 340 L298 344 L303 335 L308 330 L312 334 L317 331 L322 329 L326 323 L331 321 L336 316 L340 317 L345 314 L350 315 L354 312 L359 312 L364 304 L368 303 L373 300 L378 296 L382 298 L387 292 L392 295 L396 294 L401 290 L406 287 L410 294 L415 286 L419 290 L424 290 L429 290 L433 291 L438 288 L443 281 L447 282 L452 285 L457 277 L461 279 L466 274 L471 281 L475 283 L480 284 L485 284 L489 285 L494 292 L499 290 L503 291 L508 293 L513 296 L517 291 L522 288 L527 288 L531 283 L536 285 L541 270 L545 266 L550 264 L555 266 L559 265 L564 266 L569 260 L573 260 L578 257 L583 255 L587 253 L592 247 L597 246 L601 247 L606 243 L611 247 L615 253 L620 250 L625 246 L629 241 L634 249 L639 237 L643 232 L648 248 L653 247 L657 255 L662 255 L667 251 L671 248 L676 245 L681 256 L685 250 L690 246 L694 248 L699 253 L704 251 L708 247 L713 238 L718 227 L722 225 L727 237 L732 242 L736 236 L741 222 L746 211 L750 200 L755 191 L760 207 L764 195 L769 193 L774 186 L778 184 L783 194 L788 190 L792 185 L797 189 L802 181 L806 174 L811 178 L816 165 L820 171 L825 179 L830 187 L834 184 L839 178 L844 184 L848 181 L853 182 L858 181 L862 182 L867 183 L872 166 L876 164 L881 168 L886 169 L890 174 L895 175 L900 174 L904 168 L909 159 L914 152 L918 154 L923 160 L928 162 L932 150 L937 139 L942 141 L946 132 L951 117 L956 127 L960 119 L965 121 L969 126 L974 123 L979 125 L983 118 L988 84 L993 91 L997 82 L1002 90 L1007 99 L1011 101 L1016 96 L1021 84 L1025 74 L1030 81 L1035 70 L1039 67 L1044 69 L1049 67 L1053 50 L1058 48 L1063 47 L1067 27 L1072 13 L1077 0 L1081 25 L1086 22 L1091 21 L1095 21 L1100 29" stroke="#C7FF35" stroke-width="3" fill="none" vector-effect="non-scaling-stroke"/>
+</svg>
+<p class="ax" style="left:32px;top:192px">2007</p>
+<p class="ax" style="left:1170px;top:192px">2026</p>
+<p class="lbl lime" style="left:1260px;top:56px">Modelo: $2.83 M</p>
+<p class="lbl muted" style="left:1260px;top:110px">KN US Equity Core: $0.76 M</p>
+<p class="ax" style="left:1260px;top:160px;width:380px;white-space:normal;line-height:1.3"><span class="lime">¿Por qué desde 2007?</span> Es el primer año con todas las señales listas, e incluye 2008 completo.</p>
+</div>
+<p class="footer">Backtest Engine 0.68.0, 2007-03-01 a 2026-11-06, $100,000 iniciales. Alfa = CAGR − CAGR del KN US Equity Core. Máximo 20% por acción · costos de estrés: 5 pb + 10 pb.</p>
+<aside>[2:45–3:20] Lo probamos en el Backtest Engine de KaxaNuk, de 2007 a hoy, con 2008, el COVID, 2022 y los aranceles: 17.8% al año contra 10.5% del índice. Son 7.4 puntos de ventaja, y 6.2 con comisiones más caras de lo normal. La peor caída fue de 34%; la del índice, de 53%. ¿Por qué desde 2007? Una de nuestras alarmas usa un fondo de bonos que existe desde finales de 2003, y las señales necesitan un año de historia: 2007 es el primer año con todo encendido, e incluye 2008 completo. Y con 2000 a 2009 entrenamos el modelo de riesgo; no se califica a un alumno con el examen con el que estudió, por eso mostramos 2010 en adelante aparte: ahí la ventaja sigue en 4.8 puntos al año con costos altos.</aside>
+</section>
+
+<section id="porque">
+<svg class="bggrid" aria-label="Retícula de fondo" width="1920" height="1080" viewBox="0 0 1920 1080"><defs><pattern id="g12" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0 L0 0 0 80" fill="none" stroke="#111A22" stroke-width="1"/></pattern></defs><rect width="1920" height="1080" fill="url(#g12)"/></svg>
+<div class="top"><p class="eyebrow">¿POR QUÉ NOSOTROS?</p><p class="pg">09 / 13</p></div>
+<h2>Las opciones de Ana, lado a lado.</h2>
+<table class="in" style="--i:0;font-size:28px;color:#F4F7F9;width:1664px">
+<tr style="background:#111A22"><th style="width:22%;color:#84919D"></th><th style="width:26%;color:#84919D">Solo su Afore</th><th style="width:26%;color:#84919D">El SPY por su cuenta</th><th style="width:26%;color:#C7FF35">Los LITpsteins</th></tr>
+<tr><td style="color:#84919D">Rendimiento</td><td>4% real proyectado (CONSAR)</td><td>10.4% anual</td><td style="color:#C7FF35">17.8% anual (16.6% con costos de estrés)</td></tr>
+<tr style="background:#0D141B"><td style="color:#84919D">Peor caída</td><td>Sin dato (≈ 22% en acciones)</td><td style="color:#FF626B">−55.2%</td><td>−34.0%</td></tr>
+<tr><td style="color:#84919D">Rendimiento por riesgo (Sharpe)</td><td>—</td><td>0.52</td><td style="color:#C7FF35">0.68</td></tr>
+<tr style="background:#0D141B"><td style="color:#84919D">Quién la acompaña</td><td>Hoy no es fácil saber si le rinde bien</td><td>Nadie: decide sola cuándo salir</td><td style="color:#C7FF35">Reporte mensual: alfa, riesgo y por qué</td></tr>
+</table>
+<div class="grow"></div>
+<p class="footer">SPY y modelo: Backtest Engine de KaxaNuk, 2007-03-01 a 2026-11-06, en dólares. La Afore se expresa en términos reales y en pesos (dato del caso): no es directamente comparable.</p>
+<aside>[3:20–3:25] Comparado con sus otras opciones, Ana gana más con menos caída, y sabe cada mes por qué.</aside>
+</section>
+
+<section id="riesgo">
+<svg class="bggrid" aria-label="Retícula de fondo" width="1920" height="1080" viewBox="0 0 1920 1080"><defs><pattern id="g7" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0 L0 0 0 80" fill="none" stroke="#111A22" stroke-width="1"/></pattern></defs><rect width="1920" height="1080" fill="url(#g7)"/></svg>
+<div class="top"><p class="eyebrow">EL RIESGO, EXPLICADO A ANA</p><p class="pg">10 / 13</p></div>
+<h2>En el peor momento, le quedan $66 de cada $100. Al índice, $47.</h2>
+<div class="row">
+<div class="kpi neg in" style="--i:0;flex:1"><p class="v">−34.0%</p><p class="l">peor caída del modelo (febrero–abril de 2025, aranceles)</p></div>
+<div class="kpi neg in" style="--i:1;flex:1"><p class="v">−52.7%</p><p class="l">peor caída del KN US Equity Core (crisis de 2008)</p></div>
+<div class="panel in" style="--i:2;flex:1.3"><p class="tag">LO QUE LE DECIMOS CON HONESTIDAD</p><p class="body">Habrá años en que pierda contra el índice. El mayor riesgo de Ana no es una caída: es vender en pánico y no volver.</p></div>
+</div>
+<div class="chart grow in" style="--i:3">
+<p class="ax" style="left:32px;top:16px">CAÍDA DESDE EL MÁXIMO ANTERIOR · 2007–2026</p>
+<svg aria-label="Caídas desde el máximo del modelo y del KN US Equity Core, 2007 a 2026" width="1100" height="300" viewBox="0 0 1100 300" preserveAspectRatio="none" style="position:absolute;left:32px;top:60px;width:1200px;height:170px">
+<path d="M0 55 H1100 M0 109 H1100 M0 164 H1100 M0 218 H1100 M0 273 H1100" stroke="#1E2A35" stroke-width="1" fill="none" vector-effect="non-scaling-stroke"/>
+<path d="M0 0 L0 12 L5 5 L9 7 L14 17 L19 34 L23 51 L28 33 L33 21 L37 50 L42 37 L47 83 L51 76 L56 93 L61 72 L65 54 L70 84 L75 107 L79 97 L84 146 L89 242 L93 276 L98 252 L103 252 L107 273 L112 294 L117 245 L121 222 L126 216 L131 221 L135 183 L140 177 L144 165 L149 158 L154 138 L158 142 L163 148 L168 125 L172 101 L177 141 L182 155 L186 158 L191 146 L196 134 L200 111 L205 93 L210 81 L214 57 L219 43 L224 59 L228 40 L233 35 L238 54 L242 42 L247 112 L252 106 L256 119 L261 93 L266 76 L270 48 L275 26 L280 17 L284 23 L289 47 L294 53 L298 31 L303 20 L308 13 L312 21 L317 40 L322 18 L326 3 L331 15 L336 6 L340 18 L345 12 L350 31 L354 16 L359 24 L364 20 L368 20 L373 8 L378 9 L382 21 L387 31 L392 10 L396 23 L401 8 L406 6 L410 15 L415 21 L419 13 L424 41 L429 2 L433 27 L438 25 L443 16 L447 19 L452 13 L457 10 L461 17 L466 20 L471 64 L475 61 L480 51 L485 27 L489 31 L494 70 L499 78 L503 38 L508 21 L513 20 L517 31 L522 8 L527 5 L531 15 L536 14 L541 24 L545 8 L550 5 L555 4 L559 12 L564 14 L569 10 L573 7 L578 9 L583 11 L587 4 L592 4 L597 5 L601 4 L606 9 L611 54 L615 50 L620 52 L625 43 L629 27 L634 24 L639 7 L643 8 L648 55 L653 54 L657 106 L662 87 L667 36 L671 28 L676 4 L681 35 L685 36 L690 8 L694 34 L699 22 L704 25 L708 3 L713 10 L718 16 L722 69 L727 185 L732 148 L736 88 L741 56 L746 36 L750 5 L755 50 L760 43 L764 37 L769 7 L774 20 L778 20 L783 27 L788 7 L792 22 L797 11 L802 16 L806 9 L811 27 L816 28 L820 19 L825 27 L830 58 L834 68 L839 75 L844 80 L848 108 L853 134 L858 119 L862 99 L867 139 L872 140 L876 125 L881 118 L886 115 L890 93 L895 107 L900 85 L904 84 L909 64 L914 42 L918 45 L923 55 L928 73 L932 60 L937 22 L942 12 L946 8 L951 6 L956 30 L960 24 L965 5 L969 26 L974 47 L979 25 L983 14 L988 13 L993 21 L997 25 L1002 26 L1007 58 L1011 104 L1016 49 L1021 18 L1025 5 L1030 13 L1035 8 L1039 16 L1044 29 L1049 14 L1053 14 L1058 15 L1063 49 L1067 30 L1072 11 L1077 24 L1081 20 L1086 11 L1091 17 L1095 16 L1100 31 L1100 0 Z" fill="#FF626B" fill-opacity="0.18" stroke="#FF626B" stroke-width="2" vector-effect="non-scaling-stroke"/>
+<path d="M0 0 L0 29 L5 16 L9 17 L14 16 L19 24 L23 60 L28 11 L33 27 L37 96 L42 55 L47 95 L51 77 L56 78 L61 41 L65 37 L70 28 L75 91 L79 114 L84 174 L89 176 L93 171 L98 168 L103 163 L107 170 L112 168 L117 159 L121 160 L126 155 L131 166 L135 128 L140 128 L144 126 L149 110 L154 90 L158 120 L163 135 L168 110 L172 90 L177 168 L182 180 L186 181 L191 172 L196 156 L200 140 L205 105 L210 71 L214 54 L219 39 L224 70 L228 65 L233 94 L238 92 L242 53 L247 96 L252 75 L256 87 L261 52 L266 40 L270 16 L275 4 L280 18 L284 32 L289 49 L294 82 L298 86 L303 88 L308 40 L312 46 L317 58 L322 28 L326 5 L331 31 L336 15 L340 28 L345 12 L350 35 L354 14 L359 21 L364 12 L368 20 L373 16 L378 7 L382 25 L387 25 L392 33 L396 39 L401 16 L406 8 L410 39 L415 45 L419 26 L424 64 L429 36 L433 52 L438 38 L443 19 L447 21 L452 26 L457 22 L461 21 L466 24 L471 67 L475 58 L480 53 L485 68 L489 63 L494 107 L499 88 L503 84 L508 93 L513 106 L517 104 L522 88 L527 75 L531 86 L536 57 L541 69 L545 20 L550 29 L555 28 L559 27 L564 42 L569 27 L573 13 L578 23 L583 17 L587 16 L592 4 L597 20 L601 34 L606 21 L611 52 L615 64 L620 70 L625 44 L629 25 L634 59 L639 54 L643 12 L648 98 L653 102 L657 140 L662 116 L667 113 L671 110 L676 78 L681 114 L685 126 L690 82 L694 91 L699 105 L704 119 L708 94 L713 88 L718 27 L722 90 L727 185 L732 158 L736 157 L741 133 L746 63 L750 30 L755 92 L760 99 L764 95 L769 51 L774 38 L778 60 L783 106 L788 94 L792 93 L797 93 L802 89 L806 43 L811 46 L816 44 L820 56 L825 114 L830 150 L834 133 L839 116 L844 119 L848 105 L853 109 L858 106 L862 107 L867 113 L872 111 L876 31 L881 48 L886 50 L890 75 L895 107 L900 81 L904 88 L909 32 L914 17 L918 38 L923 45 L928 55 L932 44 L937 11 L942 41 L946 27 L951 44 L956 76 L960 63 L965 35 L969 82 L974 98 L979 77 L983 52 L988 35 L993 61 L997 49 L1002 110 L1007 156 L1011 186 L1016 150 L1021 129 L1025 86 L1030 65 L1035 71 L1039 59 L1044 83 L1049 39 L1053 26 L1058 55 L1063 82 L1067 14 L1072 43 L1077 63 L1081 166 L1086 137 L1091 136 L1095 126 L1100 153 L1100 0 Z" fill="none" stroke="#C7FF35" stroke-width="2.5" vector-effect="non-scaling-stroke"/>
+</svg>
+<p class="ax" style="left:32px;top:236px">2007</p>
+<p class="ax" style="left:1170px;top:236px">2026</p>
+<p class="lbl lime" style="left:1260px;top:56px">Modelo</p>
+<p class="lbl red" style="left:1260px;top:110px">KN US Equity Core</p>
+</div>
+<aside>[3:25–3:40] De cada 100 dólares, en el peor momento le quedaron 66; al índice, 47. Esa caída fue con los aranceles de 2025 y se recuperó en seis meses. Habrá años en que perdamos contra el índice. El mayor riesgo de Ana no es el algoritmo: es vender por miedo.</aside>
+</section>
+
+<section id="negocio">
+<svg class="bggrid" aria-label="Retícula de fondo" width="1920" height="1080" viewBox="0 0 1920 1080"><defs><pattern id="g8" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0 L0 0 0 80" fill="none" stroke="#111A22" stroke-width="1"/></pattern></defs><rect width="1920" height="1080" fill="url(#g8)"/></svg>
+<div class="top"><p class="eyebrow">MODELO DE NEGOCIO Y SIGUIENTES PASOS</p><p class="pg">11 / 13</p></div>
+<h2>Quién paga, cuánto y qué sigue.</h2>
+<div class="row">
+<div class="panel in" style="--i:0"><p class="tag">QUIÉN PAGA</p><h3>La empresa, como prestación (B2B2C)</h3><p class="body">La ofrece a sus empleados jóvenes, como Ana, vía nómina. Gana retención de talento.</p></div>
+<div class="panel hl in" style="--i:1"><p class="tag">CUÁNTO</p><h3><span style="color:#C7FF35">~0.5% anual</span> sobre lo invertido</h3><p class="body">1,000 empleados × $100 USD al mes = $1.2 M el primer año y $6,000 de cuota, que crece con cada aportación.</p></div>
+<div class="panel in" style="--i:2"><p class="tag">PRIMER CLIENTE</p><h3>DHAR Capital</h3><p class="body">Nuestro primer cliente piloto: ofrecerá el ahorro a su equipo y nos dará los primeros datos reales.</p></div>
+</div>
+<div class="row grow">
+<div class="step in" style="--i:3"><p class="n">30</p><p class="t"><b>Piloto.</b> El equipo de DHAR Capital recibe el reporte. Medimos inscripción, ahorro y si lo entienden.</p></div>
+<div class="step in" style="--i:4"><p class="n">60</p><p class="t"><b>Operación legal.</b> Alianza con una casa de bolsa registrada ante la CNBV: ellos custodian, nosotros damos algoritmo y reporte.</p></div>
+<div class="step in" style="--i:5"><p class="n">90</p><p class="t"><b>Escalar.</b> Reportes con dinero real, dos empresas más en Puebla y conversación con inversionistas.</p></div>
+</div>
+<p class="footer">Días contados desde el Demo Day. La cuota es una propuesta del equipo; el ejemplo es ilustrativo y no incluye rendimientos.</p>
+<aside>[3:40–4:10] ¿Quién paga? La empresa de Ana, como prestación: retiene talento y Ana ahorra vía nómina. ¿Cuánto? Cerca de 0.5% al año sobre lo invertido: mil empleados ahorrando 100 dólares al mes son 1.2 millones el primer año y la cuota crece con cada aportación. Nuestro primer cliente: DHAR Capital. En 30 días, piloto con su equipo; en 60, alianza con una casa de bolsa registrada ante la CNBV; en 90, dos empresas más y la conversación con inversionistas.</aside>
+</section>
+
+<section id="metodo">
+<svg class="bggrid" aria-label="Retícula de fondo" width="1920" height="1080" viewBox="0 0 1920 1080"><defs><pattern id="g9" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0 L0 0 0 80" fill="none" stroke="#111A22" stroke-width="1"/></pattern></defs><rect width="1920" height="1080" fill="url(#g9)"/></svg>
+<div class="top"><p class="eyebrow">LÁMINA DE MÉTODO · EXPERIMENTACIÓN</p><p class="pg">12 / 13</p></div>
+<h2>Por qué no hay sobreajuste ni sesgo.</h2>
+<div class="row">
+<div class="kpi plain in" style="--i:0;flex:1"><p class="v" style="font-size:64px">40</p><p class="l">variantes probadas, cada una con su criterio escrito antes de correrla</p></div>
+<div class="kpi plain in" style="--i:1;flex:1"><p class="v" style="font-size:64px">158</p><p class="l">corridas en el Backtest Engine de KaxaNuk, con costos normales y de estrés</p></div>
+<div class="kpi in" style="--i:2;flex:1.4"><p class="v" style="font-size:56px">+3.0 → +4.3 → +7.4</p><p class="l">puntos de alfa en las 3 versiones del modelo durante el hackathon</p></div>
+</div>
+<div class="row grow">
+<div class="col grow" style="gap:20px">
+<div class="step in" style="--i:3"><p class="n">01</p><p class="t"><b>Primero la lógica.</b> Cada regla tiene una razón económica publicada, escrita antes de ver los datos. Sobreajustar es memorizar las respuestas de un examen viejo.</p></div>
+<div class="step in" style="--i:4"><p class="n">02</p><p class="t"><b>Años que nunca vio.</b> La regla de acciones se diseñó con datos desde 2012 y en 2007–2014 le ganó al índice por <b>+3.9</b> puntos al año. El modelo de riesgo aprendió con 2000–2009 y después quitó <b>30%</b> de las falsas alarmas.</p></div>
+</div>
+<div class="col grow" style="gap:20px">
+<div class="step in" style="--i:5"><p class="n">03</p><p class="t"><b>Movimos las perillas.</b> Las <b>7 de 7</b> variantes de parámetros le ganan al índice, y la elegida no es la que más rinde.</p></div>
+<div class="step in" style="--i:6"><p class="n">04</p><p class="t"><b>Sin sesgo de supervivencia.</b> Usamos las empresas del índice en cada fecha, incluidas las que quebraron. Hacerlo mal llevó una prueba de <b>35%</b> a <b>7%</b> al año.</p></div>
+</div>
+</div>
+<p class="footer">Nada del futuro: se decide al cierre del mes y se compra al día siguiente, con costos de estrés (5 + 10 pb). Reproducible con md5 en el Investment Lab de KaxaNuk.</p>
+<aside>[4:10–4:45] ¿Cómo sabemos que no es suerte? Probamos 40 variantes en 158 corridas, y cada una tuvo su criterio escrito antes de correrla. Sobreajustar es memorizar las respuestas de un examen viejo; para evitarlo, lo examinamos con años que nunca vio: la regla de acciones se diseñó con datos desde 2012 y en 2007 a 2014 le ganó al índice por 3.9 puntos al año. Movimos las perillas: las 7 versiones le ganan al índice y la nuestra no es la que más rinde. Y sin sesgo: usamos las empresas que existían en cada fecha, incluidas las que quebraron, y nunca información del futuro.</aside>
+</section>
+
+<section id="cierre">
+<svg class="bggrid" aria-label="Retícula de fondo" width="1920" height="1080" viewBox="0 0 1920 1080"><defs><pattern id="g10" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0 L0 0 0 80" fill="none" stroke="#111A22" stroke-width="1"/></pattern></defs><rect width="1920" height="1080" fill="url(#g10)"/></svg>
+<div class="top"><p class="eyebrow">CIERRE</p><p class="pg">13 / 13</p></div>
+<div class="grow"></div>
+<p class="quote in" style="--i:0;width:1550px">Miguel tiene al gobierno. <span style="color:#C7FF35">Ana puede tener una estrategia que trabaje por ella,</span> con el alfa y el riesgo a la vista.</p>
+<p class="lead in" style="--i:2">Más alfa que el KN US Equity Core, después de costos, y un reporte que le dice cada mes por qué.</p>
+<div class="grow"></div>
+<div class="row" style="border-top:1px solid #1E2A35;padding-top:20px;justify-content:space-between">
+<p class="small">Los LITpsteins</p>
+<p class="small">Demo: <a href="https://claude.ai/artifact/FAKN1wuQbFLrHEw2MN4H8u" style="color:#C7FF35">Reporte de Ana</a> · código, backtest y método en el repo del hackathon</p>
+</div>
+<aside>[4:45–5:00] Miguel tiene al gobierno. Ana puede tener una estrategia que trabaje por ella, con el alfa y el riesgo a la vista cada mes. Somos Los LITpsteins. Gracias.</aside>
+</section>
+
+</div>
+<div id="notas"></div>
+<div id="ayuda">← → avanzar · N notas · Ctrl+P guardar como PDF</div>
+<script>
+const L=[...document.querySelectorAll('section')];let i=0;
+const N=document.getElementById('notas'),E=document.getElementById('escena');
+function ir(k){i=Math.max(0,Math.min(L.length-1,k));L.forEach((s,j)=>s.classList.toggle('activa',j===i));
+  const a=L[i].querySelector('aside');N.textContent=(i+1)+' / '+L.length+(a?' · '+a.textContent:'');location.hash=i+1;}
+function ajustar(){const e=Math.min(innerWidth/1920,innerHeight/1080);E.style.transform='scale('+e+') translate(-50%,-50%)';}
+addEventListener('resize',ajustar);
+addEventListener('keydown',ev=>{if(['ArrowRight','PageDown',' '].includes(ev.key))ir(i+1);
+  else if(['ArrowLeft','PageUp'].includes(ev.key))ir(i-1);
+  else if(ev.key==='n'||ev.key==='N')N.style.display=N.style.display==='block'?'none':'block';});
+addEventListener('click',ev=>{if(ev.target.closest('a'))return;ir(ev.clientX>innerWidth/2?i+1:i-1);});
+ajustar();ir((parseInt(location.hash.slice(1))||1)-1);
+</script></body></html>
