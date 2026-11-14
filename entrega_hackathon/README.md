@@ -30,7 +30,7 @@ estrés es de **+4.78%** al año.
 | --- | --- | --- |
 | 01 | El backtest contra su benchmark | [`01_backtest/`](01_backtest/): reglas (`MODELO_PRINCIPAL.md`), pesos (`weights.csv`), las 4 corridas oficiales (2007 y 2010, costos base y de estrés) con el Excel del motor, el perfil moderado y la atribución del alfa |
 | 02 | El código, y cómo correrlo | En el repositorio del equipo (ya entregado): ver `COMO_CORRER.md` |
-| 03 | El pitch: cliente, estrategia, riesgo y quién paga | [`03_pitch/presentacion.html`](03_pitch/presentacion.html) (13 láminas) y el guion con la fuente de cada cifra en [`03_pitch/PITCH.md`](03_pitch/PITCH.md) |
+| 03 | El pitch: cliente, estrategia, riesgo y quién paga | [`03_pitch/presentacion.html`](03_pitch/presentacion.html) (13 láminas) el guion con la fuente de cada cifra en [`03_pitch/PITCH.md`](03_pitch/PITCH.md) y el reparto para 3 personas en [`03_pitch/PITCH_3_PERSONAS.md`](03_pitch/PITCH_3_PERSONAS.md) |
 | 04 | Una lámina de método: cómo evitaron el sobreajuste | [`04_lamina_metodo/`](04_lamina_metodo/): la lámina y su texto |
 | + | Demo (MVP) | [`05_demo/reporte_ana.html`](05_demo/reporte_ana.html): el reporte mensual de Ana con los 237 meses reales del backtest. Fotos de la prueba con un usuario en `05_demo/fotos_prueba_usuario/` |
 

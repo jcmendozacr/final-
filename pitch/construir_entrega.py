@@ -153,6 +153,7 @@ def main():
         copiar(RAIZ / "perfil_moderado_v3" / "backtest_base" / f, b / "perfil_moderado_2007_base" / f)
     presentacion(SALIDA / "03_pitch")
     copiar(PITCH / "PITCH.md", SALIDA / "03_pitch" / "PITCH.md")
+    copiar(PITCH / "PITCH_3_PERSONAS.md", SALIDA / "03_pitch" / "PITCH_3_PERSONAS.md")
     lamina_metodo(SALIDA / "04_lamina_metodo")
     d = SALIDA / "05_demo"
     for f in ("reporte_ana.html", "datos.json", "extraer_datos.py"):
