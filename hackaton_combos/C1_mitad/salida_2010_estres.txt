@@ -1,0 +1,72 @@
+[INFO] License acceptance from cache (no re-check needed yet)
+[INFO] Executing data pipeline for backtester creation
+[INFO] Detected horizontal format for weights.csv
+[INFO] Skipping zero-weight tickers: ['ADM', 'AL1', 'AMGN', 'AMTD1', 'AON', 'APA', 'APOL', 'BBBYQ', 'BLS', 'BMY', 'BR1', 'BRCM', 'BTUUQ', 'BXP', 'CCE1', 'CEG1', 'CHKAQ', 'CHRW', 'CLX', 'CME', 'CNX', 'DGX', 'DNA1', 'DOFSQ', 'DTV1', 'ED', 'EXPD', 'FSL.B', 'FSLR', 'GIS', 'GLW', 'GRMN', 'HCBK', 'ICE', 'INCLF', 'INTU', 'JNPR', 'KSS', 'LBTYA', 'LDOS', 'MDRIQ', 'MEDI1', 'MFE', 'MGM', 'MHS', 'MIR2', 'MON2', 'MOS', 'MTLQQ', 'NEE', 'ODP', 'PBG', 'PCAR', 'PCP', 'PD1', 'ROH', 'SGP1', 'SUNEQ', 'SWN', 'UST1', 'WFTIQ', 'WMT', 'WYE', 'X']
+[INFO] Loading market data from 2009-11-23 instead of 2010-01-04 to fill the 20-day execution-cost windows
+[INFO] Execution-cost metrics: average daily volume and volatility over 20 trading days, from column 'm_volume_split_adjusted'
+[INFO] Execution-cost metrics: half spread estimated with corwin_schultz over 20 trading days
+[INFO] rebalance_date_handling=next_trading_day: every rebalancing date is a trading day, nothing moved.
+[WARNING] VMED stops trading after 2013-06-07: its whole position will be sold on 2013-06-07 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] FRX1 stops trading after 2014-06-30: its whole position will be sold on 2014-06-30 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] AGN1 stops trading after 2015-03-16: its whole position will be sold on 2015-03-16 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] PCYC stops trading after 2015-05-22: its whole position will be sold on 2015-05-22 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] ALTR1 stops trading after 2015-12-24: its whole position will be sold on 2015-12-24 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] ESRX stops trading after 2018-12-20: its whole position will be sold on 2018-12-20 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] WP stops trading after 2019-07-30: its whole position will be sold on 2019-07-30 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] SGEN stops trading after 2023-12-13: its whole position will be sold on 2023-12-13 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[INFO] Total Time in data loading and validation for 319 tickers: 0h 0m 33.15s
+[INFO] Checking data integrity for 209 rebalancing dates
+[INFO] Data integrity check passed - every rebalancing date has prices for the positions it touches, and no position outlives its price series
+[INFO] Data pipeline completed successfully, constructing backtester
+[INFO] Using 318 active tickers
+[INFO] Starting PyArrow backtest execution for weights
+[INFO] Processing 4238 trading days (from 2010-01-04 00:00:00 to 2026-11-06 00:00:00), 209 rebalancing dates
+Forced liquidation of VMED on 2013-06-07 (last price 2013-06-07): sold 13.0 shares at 207.7837 for 2701.19, commission 1.35. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of FRX1 on 2014-06-30 (last price 2014-06-30): sold 26.0 shares at 235.7606 for 6129.77, commission 3.07. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of AGN1 on 2015-03-16 (last price 2015-03-16): sold 16.0 shares at 430.9571 for 6895.31, commission 3.45. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of ALTR1 on 2015-12-24 (last price 2015-12-24): sold 10.0 shares at 312.7756 for 3127.76, commission 1.57. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of ESRX on 2018-12-20 (last price 2018-12-20): sold 8.0 shares at 423.9976 for 3391.98, commission 1.70. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of WP on 2019-07-30 (last price 2019-07-30): sold 13.0 shares at 682.7741 for 8876.06, commission 4.44. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of SGEN on 2023-12-13 (last price 2023-12-13): sold 3.0 shares at 4561.9359 for 13685.81, commission 6.85. The proceeds stay in cash until the next scheduled rebalance.
+[INFO] PyArrow backtest execution completed successfully
+[INFO] Total time in backtesting execution: 0h 0m 0.71s
+[INFO] Excel report successfully saved to: C:\Users\Zkilp\Downloads\Modelo-main\hackaton_combos\C1_mitad\backtest_2010_estres\weights_20261114081908_backtest_results.xlsx
+{
+  "ventana_pedida": [
+    "2010-01-04",
+    "2026-11-06"
+  ],
+  "ventana_valuada": [
+    "2010-01-04",
+    "2026-11-06"
+  ],
+  "años_valuados": 17.436507936507937,
+  "portafolio": {
+    "Annualized Return (CAGR)": 0.13779199785764007,
+    "Annualized Volatility": 0.18334145775993935,
+    "Portfolio Sharpe Ratio": 0.7515594101911195,
+    "Portfolio Sortino Ratio": 1.0032539647900214,
+    "Max Drawdown": -0.23342432087719958,
+    "Alpha": 0.006235379853084977,
+    "Information Ratio": 0.10501420673877121,
+    "Total Commissions": 19181.37,
+    "Total Slippage Costs": 36936.26
+  },
+  "benchmarks": {
+    "KN_US_Equity_Core": {
+      "Annualized Return (CAGR)": 0.1315566180045551,
+      "Annualized Volatility": 0.17787937418410377,
+      "Portfolio Sharpe Ratio": 0.7395833193588539,
+      "Portfolio Sortino Ratio": 0.9662730357867496,
+      "Max Drawdown": -0.33016718560555447
+    },
+    "SPY": {
+      "Annualized Return (CAGR)": 0.13220668020583748,
+      "Annualized Volatility": 0.17576386220336432,
+      "Portfolio Sharpe Ratio": 0.7521835179797665,
+      "Portfolio Sortino Ratio": 1.0142268790670927,
+      "Max Drawdown": -0.3362542758308964
+    }
+  },
+  "tasa_libre_de_riesgo": 0.0
+}

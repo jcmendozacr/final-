@@ -1,0 +1,32 @@
+# Entorno: se reinstala; contiene librerías con licencia de KaxaNuk que no van en un repositorio
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Datos de KaxaNuk (Analytics Factory) y sus derivados: licencia propia y archivos de más de 100 MB
+KN_US_Equity_Core.zip
+KN_US_Equity_Factor_Model.zip
+datos_atribucion*/
+datos_backtest*/
+*.pkl
+
+# Secretos
+.env
+*.env
+.kaxanuk_license
+
+# Datos de KaxaNuk extraídos (licencia propia; varios archivos pasan de 100 MB)
+KN/
+KN_sectores/
+KN_US_Equity_Core_*.csv
+KN_US_Equity_Factor_Model_*/
+filtro_riesgo/indices_kn.csv
+
+# Trabajo de OKRUS (proyecto aparte, no es del hackathon)
+okrus_*/
+modelo_okrus_principal/
+hackaton_A20/
+
+# IDE
+.idea/

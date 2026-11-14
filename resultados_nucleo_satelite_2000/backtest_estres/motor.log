@@ -1,0 +1,60 @@
+[INFO] License acceptance from cache (no re-check needed yet)
+[INFO] Executing data pipeline for backtester creation
+[INFO] Detected horizontal format for weights.csv
+[INFO] Loading market data from 2000-12-21 instead of 2001-02-01 to fill the 20-day execution-cost windows
+[INFO] Execution-cost metrics: average daily volume and volatility over 20 trading days, from column 'm_volume_split_adjusted'
+[INFO] Execution-cost metrics: half spread estimated with corwin_schultz over 20 trading days
+[INFO] rebalance_date_handling=next_trading_day: every rebalancing date is a trading day, nothing moved.
+[WARNING] CIT.A has a weight of 0.015 on 2001-06-01 but its last price is 2001-06-01; the weight is ignored and the ticker is not held from 2001-06-01 on (delisted_position_handling=sell_at_last_price). The other weights are not renormalized: the freed capital stays in cash.
+[WARNING] FSL.B has a weight of 0.015 on 2006-12-01 but its last price is 2006-12-01; the weight is ignored and the ticker is not held from 2006-12-01 on (delisted_position_handling=sell_at_last_price). The other weights are not renormalized: the freed capital stays in cash.
+[WARNING] ROH has a weight of 0.015 on 2009-04-01 but its last price is 2009-04-01; the weight is ignored and the ticker is not held from 2009-04-01 on (delisted_position_handling=sell_at_last_price). The other weights are not renormalized: the freed capital stays in cash.
+[WARNING] UB1 has a weight of 0.015 on 2008-11-03 but its last price is 2008-11-03; the weight is ignored and the ticker is not held from 2008-11-03 on (delisted_position_handling=sell_at_last_price). The other weights are not renormalized: the freed capital stays in cash.
+[WARNING] AZA.A stops trading after 2001-06-22: its whole position will be sold on 2001-06-22 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] IMNX stops trading after 2002-07-15: its whole position will be sold on 2002-07-15 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] TRW1 stops trading after 2002-12-11: its whole position will be sold on 2002-12-11 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] EXPEA stops trading after 2003-08-08: its whole position will be sold on 2003-08-08 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] AWE stops trading after 2004-10-26: its whole position will be sold on 2004-10-26 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] UCL1 stops trading after 2005-08-10: its whole position will be sold on 2005-08-10 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] BR1 stops trading after 2006-03-31: its whole position will be sold on 2006-03-31 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] BLS stops trading after 2006-12-29: its whole position will be sold on 2006-12-29 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] INCLF stops trading after 2007-01-04: its whole position will be sold on 2007-01-04 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] PD1 stops trading after 2007-03-19: its whole position will be sold on 2007-03-19 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] MEDI1 stops trading after 2007-06-18: its whole position will be sold on 2007-06-18 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] HLT1 stops trading after 2007-10-23: its whole position will be sold on 2007-10-23 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] AL1 stops trading after 2007-11-13: its whole position will be sold on 2007-11-13 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] LYO stops trading after 2007-12-20: its whole position will be sold on 2007-12-20 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] BUD1 stops trading after 2008-11-17: its whole position will be sold on 2008-11-17 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] BRL stops trading after 2008-12-22: its whole position will be sold on 2008-12-22 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] NFS stops trading after 2008-12-31: its whole position will be sold on 2008-12-31 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] UST1 stops trading after 2009-01-05: its whole position will be sold on 2009-01-05 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] DNA1 stops trading after 2009-03-26: its whole position will be sold on 2009-03-26 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] WYE stops trading after 2009-10-15: its whole position will be sold on 2009-10-15 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] SGP1 stops trading after 2009-11-03: its whole position will be sold on 2009-11-03 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] Q1 stops trading after 2011-03-31: its whole position will be sold on 2011-03-31 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] MMI1 stops trading after 2012-05-21: its whole position will be sold on 2012-05-21 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] EP1 stops trading after 2012-05-24: its whole position will be sold on 2012-05-24 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] VMED stops trading after 2013-06-07: its whole position will be sold on 2013-06-07 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] FRX1 stops trading after 2014-06-30: its whole position will be sold on 2014-06-30 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] COV stops trading after 2015-01-26: its whole position will be sold on 2015-01-26 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] AGN1 stops trading after 2015-03-16: its whole position will be sold on 2015-03-16 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] PCYC stops trading after 2015-05-22: its whole position will be sold on 2015-05-22 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] HSP stops trading after 2015-09-02: its whole position will be sold on 2015-09-02 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] ALTR1 stops trading after 2015-12-24: its whole position will be sold on 2015-12-24 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] TWC stops trading after 2016-05-17: its whole position will be sold on 2016-05-17 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] ESRX stops trading after 2018-12-20: its whole position will be sold on 2018-12-20 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] TFCF stops trading after 2019-03-20: its whole position will be sold on 2019-03-20 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] WP stops trading after 2019-07-30: its whole position will be sold on 2019-07-30 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] TSS stops trading after 2019-09-17: its whole position will be sold on 2019-09-17 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] CLR stops trading after 2022-11-21: its whole position will be sold on 2022-11-21 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] HZNP stops trading after 2023-10-05: its whole position will be sold on 2023-10-05 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] SGEN stops trading after 2023-12-13: its whole position will be sold on 2023-12-13 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[INFO] Total Time in data loading and validation for 634 tickers: 0h 0m 27.33s
+[INFO] Checking data integrity for 310 rebalancing dates
+[INFO] Data integrity check passed - every rebalancing date has prices for the positions it touches, and no position outlives its price series
+[INFO] Data pipeline completed successfully, constructing backtester
+[INFO] Using 633 active tickers
+[INFO] Starting PyArrow backtest execution for weights
+[INFO] Processing 6480 trading days (from 2001-02-01 00:00:00 to 2026-11-06 00:00:00), 310 rebalancing dates
+[INFO] PyArrow backtest execution completed successfully
+[INFO] Total time in backtesting execution: 0h 0m 0.93s
+[INFO] Excel report successfully saved to: /Users/habib/Desktop/Carpeta de investigación/resultados_nucleo_satelite_2000/backtest_estres/weights_20261113220054_backtest_results.xlsx

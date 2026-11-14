@@ -1,0 +1,60 @@
+[INFO] License acceptance from cache (no re-check needed yet)
+[INFO] Executing data pipeline for backtester creation
+[INFO] Detected horizontal format for weights.csv
+[INFO] Skipping zero-weight tickers: ['ADI', 'AIV', 'AL1', 'APA', 'APD', 'AVY', 'BBY', 'BJS', 'BR1', 'BRCM', 'BTUUQ', 'BXP', 'CA1', 'CAR', 'CEG1', 'CHKAQ', 'DOFSQ', 'DRE', 'DTE', 'EMC1', 'FCE.A', 'GP1', 'HPQ', 'KIM', 'KMB', 'KMI1', 'MON2', 'MOS', 'MSI', 'NEM', 'NRG', 'NRTLQ', 'NUE', 'NWL', 'OVV', 'PCP', 'PD1', 'POT', 'PSA', 'PX1', 'RIG', 'ROH', 'RSE1', 'SAFE', 'SCCO', 'SCZ.B', 'SHW', 'SITC', 'TXU', 'TYC', 'UCL1', 'VMC', 'VNO', 'VRTS1', 'WFTIQ', 'WLL1', 'XTO']
+[INFO] Loading market data from 2009-11-23 instead of 2010-01-04 to fill the 20-day execution-cost windows
+[INFO] Execution-cost metrics: average daily volume and volatility over 20 trading days, from column 'm_volume_split_adjusted'
+[INFO] Execution-cost metrics: half spread estimated with corwin_schultz over 20 trading days
+[INFO] rebalance_date_handling=next_trading_day: every rebalancing date is a trading day, nothing moved.
+[WARNING] PGN1 has a weight of 0.2 on 2012-07-02 but its last price is 2012-07-02; the weight is ignored and the ticker is not held from 2012-07-02 on (delisted_position_handling=sell_at_last_price). The other weights are not renormalized: the freed capital stays in cash.
+[WARNING] AGN1 stops trading after 2015-03-16: its whole position will be sold on 2015-03-16 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[INFO] Total Time in data loading and validation for 221 tickers: 0h 0m 22.99s
+[INFO] Checking data integrity for 203 rebalancing dates
+[INFO] Data integrity check passed - every rebalancing date has prices for the positions it touches, and no position outlives its price series
+[INFO] Data pipeline completed successfully, constructing backtester
+[INFO] Using 219 active tickers
+[INFO] Starting PyArrow backtest execution for weights
+[INFO] Processing 4238 trading days (from 2010-01-04 00:00:00 to 2026-11-06 00:00:00), 203 rebalancing dates
+Forced liquidation of AGN1 on 2015-03-16 (last price 2015-03-16): sold 3992.0 shares at 9.4567 for 37751.18, commission 3.78. The proceeds stay in cash until the next scheduled rebalance.
+[INFO] PyArrow backtest execution completed successfully
+[INFO] Total time in backtesting execution: 0h 0m 0.54s
+[INFO] Excel report successfully saved to: C:\Users\Zkilp\Downloads\Modelo-main\hackaton_ideas\I1_lider_sectorial__modelo\backtest_base\weights_20261114072518_backtest_results.xlsx
+{
+  "ventana_pedida": [
+    "2010-01-04",
+    "2026-11-06"
+  ],
+  "ventana_valuada": [
+    "2010-01-04",
+    "2026-11-06"
+  ],
+  "años_valuados": 17.436507936507937,
+  "portafolio": {
+    "Annualized Return (CAGR)": 0.09394779699154832,
+    "Annualized Volatility": 0.25774036497950786,
+    "Portfolio Sharpe Ratio": 0.3645055635698266,
+    "Portfolio Sortino Ratio": 0.4983519237831018,
+    "Max Drawdown": -0.4164680773230029,
+    "Alpha": -0.03760882101300678,
+    "Information Ratio": -0.06140214190886361,
+    "Total Commissions": 5773.94,
+    "Total Slippage Costs": 28410.41
+  },
+  "benchmarks": {
+    "KN_US_Equity_Core": {
+      "Annualized Return (CAGR)": 0.1315566180045551,
+      "Annualized Volatility": 0.17787937418410377,
+      "Portfolio Sharpe Ratio": 0.7395833193588539,
+      "Portfolio Sortino Ratio": 0.9662730357867496,
+      "Max Drawdown": -0.33016718560555447
+    },
+    "SPY": {
+      "Annualized Return (CAGR)": 0.1322066504035111,
+      "Annualized Volatility": 0.17576386220336432,
+      "Portfolio Sharpe Ratio": 0.7521833484208708,
+      "Portfolio Sortino Ratio": 1.0142268790670927,
+      "Max Drawdown": -0.3362542758308964
+    }
+  },
+  "tasa_libre_de_riesgo": 0.0
+}

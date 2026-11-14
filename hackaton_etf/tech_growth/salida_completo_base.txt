@@ -1,0 +1,57 @@
+[INFO] License acceptance from cache (no re-check needed yet)
+[INFO] Executing data pipeline for backtester creation
+[INFO] Detected horizontal format for weights.csv
+[INFO] Loading market data from 2000-12-21 instead of 2001-02-01 to fill the 20-day execution-cost windows
+[INFO] Execution-cost metrics: average daily volume and volatility over 20 trading days, from column 'm_volume_split_adjusted'
+[INFO] Execution-cost metrics: half spread estimated with corwin_schultz over 20 trading days
+[INFO] rebalance_date_handling=next_trading_day: every rebalancing date is a trading day, nothing moved.
+[INFO] delisted_position_handling=sell_at_last_price: no position outlives its price series, nothing to do.
+[INFO] Total Time in data loading and validation for 4 tickers: 0h 0m 0.87s
+[INFO] Checking data integrity for 310 rebalancing dates
+[INFO] Data integrity check passed - every rebalancing date has prices for the positions it touches, and no position outlives its price series
+[INFO] Data pipeline completed successfully, constructing backtester
+[INFO] Using 3 active tickers
+[INFO] Starting PyArrow backtest execution for weights
+[INFO] Processing 6480 trading days (from 2001-02-01 00:00:00 to 2026-11-06 00:00:00), 310 rebalancing dates
+[INFO] PyArrow backtest execution completed successfully
+[INFO] Total time in backtesting execution: 0h 0m 0.30s
+[INFO] Excel report successfully saved to: C:\Users\Zkilp\Downloads\Modelo-main\hackaton_etf\tech_growth\backtest_completo_base\weights_20261114075352_backtest_results.xlsx
+{
+  "ventana_pedida": [
+    "2001-02-01",
+    "2026-11-06"
+  ],
+  "ventana_valuada": [
+    "2001-02-01",
+    "2026-11-06"
+  ],
+  "años_valuados": 26.67063492063492,
+  "portafolio": {
+    "Annualized Return (CAGR)": 0.10248673123168861,
+    "Annualized Volatility": 0.2439956772608237,
+    "Portfolio Sharpe Ratio": 0.42003502841623513,
+    "Portfolio Sortino Ratio": 0.5830581520113306,
+    "Max Drawdown": -0.61816711711055,
+    "Alpha": 0.01806313308768326,
+    "Information Ratio": 0.2608041261248521,
+    "Total Commissions": 166.1,
+    "Total Slippage Costs": 833.36
+  },
+  "benchmarks": {
+    "KN_US_Equity_Core": {
+      "Annualized Return (CAGR)": 0.08442359814400535,
+      "Annualized Volatility": 0.19373468513984582,
+      "Portfolio Sharpe Ratio": 0.4357691452259303,
+      "Portfolio Sortino Ratio": 0.5791595982655361,
+      "Max Drawdown": -0.5266640980723434
+    },
+    "SPY": {
+      "Annualized Return (CAGR)": 0.08325925719528371,
+      "Annualized Volatility": 0.19430680848449325,
+      "Portfolio Sharpe Ratio": 0.4284937714981215,
+      "Portfolio Sortino Ratio": 0.5754908503874774,
+      "Max Drawdown": -0.5518463924119703
+    }
+  },
+  "tasa_libre_de_riesgo": 0.0
+}

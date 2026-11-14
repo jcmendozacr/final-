@@ -1,0 +1,18 @@
+[INFO] License acceptance from cache (no re-check needed yet)
+[INFO] Executing data pipeline for backtester creation
+[INFO] Detected horizontal format for weights.csv
+[INFO] Loading market data from 2000-12-21 instead of 2001-02-01 to fill the 20-day execution-cost windows
+[INFO] Execution-cost metrics: average daily volume and volatility over 20 trading days, from column 'm_volume_split_adjusted'
+[INFO] Execution-cost metrics: half spread estimated with corwin_schultz over 20 trading days
+[INFO] rebalance_date_handling=next_trading_day: every rebalancing date is a trading day, nothing moved.
+[INFO] delisted_position_handling=sell_at_last_price: no position outlives its price series, nothing to do.
+[INFO] Total Time in data loading and validation for 4 tickers: 0h 0m 0.87s
+[INFO] Checking data integrity for 310 rebalancing dates
+[INFO] Data integrity check passed - every rebalancing date has prices for the positions it touches, and no position outlives its price series
+[INFO] Data pipeline completed successfully, constructing backtester
+[INFO] Using 3 active tickers
+[INFO] Starting PyArrow backtest execution for weights
+[INFO] Processing 6480 trading days (from 2001-02-01 00:00:00 to 2026-11-06 00:00:00), 310 rebalancing dates
+[INFO] PyArrow backtest execution completed successfully
+[INFO] Total time in backtesting execution: 0h 0m 0.31s
+[INFO] Excel report successfully saved to: C:\Users\Zkilp\Downloads\Modelo-main\hackaton_etf\tech_growth\backtest_completo_estres\weights_20261114075402_backtest_results.xlsx

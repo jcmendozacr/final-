@@ -1,0 +1,84 @@
+[INFO] License acceptance from cache (no re-check needed yet)
+[INFO] Executing data pipeline for backtester creation
+[INFO] Detected horizontal format for weights.csv
+[INFO] Skipping zero-weight tickers: ['AMTD1', 'AON', 'BLS', 'BR1', 'CME', 'DOFSQ', 'DTV1', 'EXPD', 'FSL.B', 'GLW', 'INCLF', 'ODP', 'WFTIQ']
+[INFO] Loading market data from 2007-01-18 instead of 2007-03-01 to fill the 20-day execution-cost windows
+[INFO] Execution-cost metrics: average daily volume and volatility over 20 trading days, from column 'm_volume_split_adjusted'
+[INFO] Execution-cost metrics: half spread estimated with corwin_schultz over 20 trading days
+[INFO] rebalance_date_handling=next_trading_day: every rebalancing date is a trading day, nothing moved.
+[WARNING] ROH has a weight of 0.015 on 2009-04-22 but its last price is 2009-04-01; the weight is ignored and the ticker is not held from 2009-04-01 on (delisted_position_handling=sell_at_last_price). The other weights are not renormalized: the freed capital stays in cash.
+[WARNING] PD1 stops trading after 2007-03-19: its whole position will be sold on 2007-03-19 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] MEDI1 stops trading after 2007-06-18: its whole position will be sold on 2007-06-18 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] AL1 stops trading after 2007-11-13: its whole position will be sold on 2007-11-13 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] UST1 stops trading after 2009-01-05: its whole position will be sold on 2009-01-05 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] SGP1 stops trading after 2009-11-03: its whole position will be sold on 2009-11-03 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] VMED stops trading after 2013-06-07: its whole position will be sold on 2013-06-07 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] FRX1 stops trading after 2014-06-30: its whole position will be sold on 2014-06-30 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] AGN1 stops trading after 2015-03-16: its whole position will be sold on 2015-03-16 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] PCYC stops trading after 2015-05-22: its whole position will be sold on 2015-05-22 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] ALTR1 stops trading after 2015-12-24: its whole position will be sold on 2015-12-24 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] ESRX stops trading after 2018-12-20: its whole position will be sold on 2018-12-20 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] WP stops trading after 2019-07-30: its whole position will be sold on 2019-07-30 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] SGEN stops trading after 2023-12-13: its whole position will be sold on 2023-12-13 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[INFO] Total Time in data loading and validation for 370 tickers: 0h 0m 43.56s
+[INFO] Checking data integrity for 246 rebalancing dates
+[INFO] Data integrity check passed - every rebalancing date has prices for the positions it touches, and no position outlives its price series
+[INFO] Data pipeline completed successfully, constructing backtester
+[INFO] Using 369 active tickers
+[INFO] Starting PyArrow backtest execution for weights
+[INFO] Processing 4955 trading days (from 2007-03-01 00:00:00 to 2026-11-06 00:00:00), 246 rebalancing dates
+Forced liquidation of PD1 on 2007-03-19 (last price 2007-03-19): sold 15.0 shares at 191.6454 for 2874.68, commission 0.29. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of MEDI1 on 2007-06-18 (last price 2007-06-18): sold 20.0 shares at 162.3421 for 3246.84, commission 0.32. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of AL1 on 2007-11-13 (last price 2007-11-13): sold 14.0 shares at 247.1111 for 3459.56, commission 0.35. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of UST1 on 2009-01-05 (last price 2009-01-05): sold 8.0 shares at 190.5273 for 1524.22, commission 0.15. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of SGP1 on 2009-11-03 (last price 2009-11-03): sold 25.0 shares at 137.8360 for 3445.90, commission 0.34. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of VMED on 2013-06-07 (last price 2013-06-07): sold 16.0 shares at 207.8877 for 3326.20, commission 0.33. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of FRX1 on 2014-06-30 (last price 2014-06-30): sold 34.0 shares at 235.8786 for 8019.87, commission 0.80. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of AGN1 on 2015-03-16 (last price 2015-03-16): sold 21.0 shares at 431.1728 for 9054.63, commission 0.91. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of PCYC on 2015-05-22 (last price 2015-05-22): sold 1.0 shares at 7130.6552 for 7130.66, commission 0.71. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of ALTR1 on 2015-12-24 (last price 2015-12-24): sold 14.0 shares at 312.9321 for 4381.05, commission 0.44. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of ESRX on 2018-12-20 (last price 2018-12-20): sold 11.0 shares at 424.2098 for 4666.31, commission 0.47. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of WP on 2019-07-30 (last price 2019-07-30): sold 17.0 shares at 683.1158 for 11612.97, commission 1.16. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of SGEN on 2023-12-13 (last price 2023-12-13): sold 5.0 shares at 4564.2191 for 22821.10, commission 2.28. The proceeds stay in cash until the next scheduled rebalance.
+[INFO] PyArrow backtest execution completed successfully
+[INFO] Total time in backtesting execution: 0h 0m 1.01s
+[INFO] Excel report successfully saved to: C:\Users\Zkilp\Downloads\Modelo-main\hackaton_combos\C1_mitad\backtest_2007_base\weights_20261114081140_backtest_results.xlsx
+{
+  "ventana_pedida": [
+    "2007-03-01",
+    "2026-11-06"
+  ],
+  "ventana_valuada": [
+    "2007-03-01",
+    "2026-11-06"
+  ],
+  "años_valuados": 20.38095238095238,
+  "portafolio": {
+    "Annualized Return (CAGR)": 0.1365036172413534,
+    "Annualized Volatility": 0.1852835688295749,
+    "Portfolio Sharpe Ratio": 0.736728130312032,
+    "Portfolio Sortino Ratio": 0.9819497082869602,
+    "Max Drawdown": -0.2561267415988319,
+    "Alpha": 0.031991533156617846,
+    "Information Ratio": 0.2138049379572138,
+    "Total Commissions": 5529.14,
+    "Total Slippage Costs": 26542.8
+  },
+  "benchmarks": {
+    "KN_US_Equity_Core": {
+      "Annualized Return (CAGR)": 0.10451208408473556,
+      "Annualized Volatility": 0.20010631925981373,
+      "Portfolio Sharpe Ratio": 0.5222827768324464,
+      "Portfolio Sortino Ratio": 0.6855043160836345,
+      "Max Drawdown": -0.5266640980723433
+    },
+    "SPY": {
+      "Annualized Return (CAGR)": 0.10392177037699923,
+      "Annualized Volatility": 0.19987654113620526,
+      "Portfolio Sharpe Ratio": 0.5199298015977876,
+      "Portfolio Sortino Ratio": 0.7310238172568129,
+      "Max Drawdown": -0.5518463924119704
+    }
+  },
+  "tasa_libre_de_riesgo": 0.0
+}

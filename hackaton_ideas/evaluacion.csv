@@ -1,0 +1,8 @@
+combinación,CAGR,alfa,alfa_estrés,vol,sharpe,caída_máx,peso_máx,vs_KN_2010_17,vs_KN_2018_26,caída_actual,peor_caída,ref_2001_09,c1,c2,c3,c4,cumple
+Modelo principal (referencia),13.24,0.08,-0.65,20.73,0.64,-30.86,0.06,0.61,-0.49,,,,,,,,
+I1_lider_sectorial__base,9.42,-3.73,-4.98,24.06,0.39,-41.65,0.2,-8.95,0.85,-41.68,2026-06-22 → 2026-11-06,14.21,True,False,False,False,False
+I1_lider_sectorial__modelo,9.39,-3.76,-5.04,25.77,0.36,-41.65,0.2,-7.74,-0.38,-41.68,2026-06-22 → 2026-11-06,10.24,True,False,False,False,False
+I2_estrella_a1__base,13.13,-0.03,-0.91,18.36,0.71,-26.79,0.2,-5.31,4.92,-26.82,2026-06-22 → 2026-11-06,10.87,True,False,True,False,False
+I2_estrella_a1__modelo,14.57,1.41,0.51,19.26,0.76,-26.81,0.2,-4.65,7.23,-26.82,2026-06-22 → 2026-11-06,7.08,True,True,True,False,False
+I3_top5__base,12.09,-1.07,-1.94,19.07,0.63,-32.0,0.2,-6.02,3.53,-23.9,2021-11-19 → 2022-12-16,7.28,True,False,True,False,False
+I3_top5__modelo,11.62,-1.54,-2.39,19.89,0.58,-30.01,0.2,-5.18,1.75,-23.87,2021-11-19 → 2022-09-27,2.21,True,False,True,False,False

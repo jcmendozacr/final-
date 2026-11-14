@@ -1,0 +1,39 @@
+{
+  "ventana_pedida": [
+    "2000-01-03",
+    "2026-11-06"
+  ],
+  "ventana_valuada": [
+    "2000-01-03",
+    "2026-11-06"
+  ],
+  "años_valuados": 27.793650793650794,
+  "portafolio": {
+    "Annualized Return (CAGR)": 0.08784497190215168,
+    "Annualized Volatility": 0.20438719867546984,
+    "Portfolio Sharpe Ratio": 0.42979683889906295,
+    "Portfolio Sortino Ratio": 0.5898080368729042,
+    "Max Drawdown": -0.5330425887529974,
+    "Alpha": 0.00933954606412235,
+    "Information Ratio": 0.17812520283732933,
+    "Total Commissions": 9335.29,
+    "Total Slippage Costs": 17692.09
+  },
+  "benchmarks": {
+    "KN_US_Equity_Core": {
+      "Annualized Return (CAGR)": 0.07850542583802933,
+      "Annualized Volatility": 0.19632650795529002,
+      "Portfolio Sharpe Ratio": 0.3998717577959854,
+      "Portfolio Sortino Ratio": 0.5379477565725268,
+      "Max Drawdown": -0.5266640980723435
+    },
+    "SPY": {
+      "Annualized Return (CAGR)": 0.0781131354236364,
+      "Annualized Volatility": 0.19648731046887558,
+      "Portfolio Sharpe Ratio": 0.3975479904388526,
+      "Portfolio Sortino Ratio": 0.5417518983590619,
+      "Max Drawdown": -0.551846392411971
+    }
+  },
+  "tasa_libre_de_riesgo": 0.0
+}

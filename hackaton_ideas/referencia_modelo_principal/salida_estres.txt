@@ -1,0 +1,73 @@
+[INFO] License acceptance from cache (no re-check needed yet)
+[INFO] Executing data pipeline for backtester creation
+[INFO] Detected horizontal format for weights.csv
+[INFO] Skipping zero-weight tickers: ['ADM', 'AL1', 'AMGN', 'AMTD1', 'AON', 'APA', 'APOL', 'BBBYQ', 'BLS', 'BMY', 'BR1', 'BRCM', 'BTUUQ', 'BXP', 'CCE1', 'CEG1', 'CHKAQ', 'CHRW', 'CLX', 'CME', 'CNX', 'DGX', 'DNA1', 'DOFSQ', 'DTV1', 'ED', 'EXPD', 'FSL.B', 'FSLR', 'GIS', 'GLW', 'GRMN', 'HCBK', 'ICE', 'INCLF', 'INTU', 'JNPR', 'KSS', 'LBTYA', 'LDOS', 'MDRIQ', 'MEDI1', 'MFE', 'MGM', 'MHS', 'MIR2', 'MON2', 'MOS', 'MTLQQ', 'NEE', 'ODP', 'PBG', 'PCAR', 'PCP', 'PD1', 'ROH', 'SGP1', 'SUNEQ', 'SWN', 'UST1', 'WFTIQ', 'WMT', 'WYE', 'X']
+[INFO] Loading market data from 2009-11-23 instead of 2010-01-04 to fill the 20-day execution-cost windows
+[INFO] Execution-cost metrics: average daily volume and volatility over 20 trading days, from column 'm_volume_split_adjusted'
+[INFO] Execution-cost metrics: half spread estimated with corwin_schultz over 20 trading days
+[INFO] rebalance_date_handling=next_trading_day: every rebalancing date is a trading day, nothing moved.
+[WARNING] VMED stops trading after 2013-06-07: its whole position will be sold on 2013-06-07 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] FRX1 stops trading after 2014-06-30: its whole position will be sold on 2014-06-30 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] AGN1 stops trading after 2015-03-16: its whole position will be sold on 2015-03-16 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] PCYC stops trading after 2015-05-22: its whole position will be sold on 2015-05-22 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] ALTR1 stops trading after 2015-12-24: its whole position will be sold on 2015-12-24 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] ESRX stops trading after 2018-12-20: its whole position will be sold on 2018-12-20 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] WP stops trading after 2019-07-30: its whole position will be sold on 2019-07-30 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[WARNING] SGEN stops trading after 2023-12-13: its whole position will be sold on 2023-12-13 at that day's execution price (delisted_position_handling=sell_at_last_price, delisting_exit_lead_days=0).
+[INFO] Total Time in data loading and validation for 313 tickers: 0h 0m 31.80s
+[INFO] Checking data integrity for 209 rebalancing dates
+[INFO] Data integrity check passed - every rebalancing date has prices for the positions it touches, and no position outlives its price series
+[INFO] Data pipeline completed successfully, constructing backtester
+[INFO] Using 312 active tickers
+[INFO] Starting PyArrow backtest execution for weights
+[INFO] Processing 4238 trading days (from 2010-01-04 00:00:00 to 2026-11-06 00:00:00), 209 rebalancing dates
+Forced liquidation of VMED on 2013-06-07 (last price 2013-06-07): sold 25.0 shares at 207.7837 for 5194.59, commission 2.60. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of FRX1 on 2014-06-30 (last price 2014-06-30): sold 54.0 shares at 235.7606 for 12731.07, commission 6.37. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of AGN1 on 2015-03-16 (last price 2015-03-16): sold 34.0 shares at 430.9571 for 14652.54, commission 7.33. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of PCYC on 2015-05-22 (last price 2015-05-22): sold 2.0 shares at 7127.0881 for 14254.18, commission 7.13. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of ALTR1 on 2015-12-24 (last price 2015-12-24): sold 22.0 shares at 312.7756 for 6881.06, commission 3.44. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of ESRX on 2018-12-20 (last price 2018-12-20): sold 18.0 shares at 423.9976 for 7631.96, commission 3.82. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of WP on 2019-07-30 (last price 2019-07-30): sold 26.0 shares at 682.7741 for 17752.13, commission 8.88. The proceeds stay in cash until the next scheduled rebalance.
+Forced liquidation of SGEN on 2023-12-13 (last price 2023-12-13): sold 5.0 shares at 4561.9359 for 22809.68, commission 11.42. The proceeds stay in cash until the next scheduled rebalance.
+[INFO] PyArrow backtest execution completed successfully
+[INFO] Total time in backtesting execution: 0h 0m 0.70s
+[INFO] Excel report successfully saved to: C:\Users\Zkilp\Downloads\Modelo-main\hackaton_ideas\referencia_modelo_principal\backtest_estres\weights_20261114073949_backtest_results.xlsx
+{
+  "ventana_pedida": [
+    "2010-01-04",
+    "2026-11-06"
+  ],
+  "ventana_valuada": [
+    "2010-01-04",
+    "2026-11-06"
+  ],
+  "años_valuados": 17.436507936507937,
+  "portafolio": {
+    "Annualized Return (CAGR)": 0.125080687157328,
+    "Annualized Volatility": 0.2075256872988124,
+    "Portfolio Sharpe Ratio": 0.6027238785973836,
+    "Portfolio Sortino Ratio": 0.8077946206460179,
+    "Max Drawdown": -0.31499173080002635,
+    "Alpha": -0.006475930847227085,
+    "Information Ratio": 0.027129783920505374,
+    "Total Commissions": 20082.87,
+    "Total Slippage Costs": 38674.05
+  },
+  "benchmarks": {
+    "KN_US_Equity_Core": {
+      "Annualized Return (CAGR)": 0.1315566180045551,
+      "Annualized Volatility": 0.17787937418410377,
+      "Portfolio Sharpe Ratio": 0.7395833193588539,
+      "Portfolio Sortino Ratio": 0.9662730357867496,
+      "Max Drawdown": -0.33016718560555447
+    },
+    "SPY": {
+      "Annualized Return (CAGR)": 0.13220668020583748,
+      "Annualized Volatility": 0.17576386220336432,
+      "Portfolio Sharpe Ratio": 0.7521835179797665,
+      "Portfolio Sortino Ratio": 1.0142268790670927,
+      "Max Drawdown": -0.3362542758308964
+    }
+  },
+  "tasa_libre_de_riesgo": 0.0
+}

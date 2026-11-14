@@ -1,0 +1,12 @@
+45fdbb365e1a7de4d994f31d726e43ab *modelo_principal_c2/weights.csv
+9ac0bdc7ba3f6596a2713a008bba3055 *modelo_principal_c2/decisiones_refugio.csv
+131c0e1b40220654c08ea849244f74c0 *resultados_regimen_n10_a60/weights.csv
+405d35941a28b8d9f166cd047b85b7c4 *hackaton_etf/ciclicos6_top2/weights.csv
+45fdbb365e1a7de4d994f31d726e43ab *hackaton_combos/C2_confirmado/weights.csv
+aa27c835a0f734733e021abd44781e8c *modelo_regimen.py
+15effab20785d91bbe7da05c529f428b *filtro_riesgo/filtro.py
+75ebfd666f9a608e081fa2358c291c34 *hackaton_etf/filtros_ciclicos.py
+a17612e628fe1af414f7aa567795d41e *hackaton_combos/preparar.py
+7f7d848a7c142846ad65b12b5384207e *hackaton_combos/c2_confirmado.py
+99d07e7b1e3a749be056d63b0ead623b *correr_backtest.py
+29e85d5015cc5d83fc5ce4b7d1393458 *preparar_motor.py
